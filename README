@@ -1,0 +1,1 @@
+./mkbootimg --kernel zImage --dt devtree --ramdisk ramdisk-recovery.img --cmdline "console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=w7ds" --base 0x00000000 --ramdisk_offset 0x01000000 -o new_recovery.img
