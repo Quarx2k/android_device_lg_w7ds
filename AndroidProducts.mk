@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_w7ds.mk
+    $(LOCAL_DIR)/full_w7.mk

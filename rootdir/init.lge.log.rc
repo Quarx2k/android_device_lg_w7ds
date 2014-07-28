@@ -1,0 +1,165 @@
+on post-fs-data
+    mkdir /data/logger 0775 system system
+
+#power log
+service log-power /system/bin/sh /system/bin/logger_power.sh
+    class main
+    disabled
+    oneshot
+
+# kernel log
+service log-kernel /system/bin/sh /system/bin/logger_kernel.sh
+    class main
+    disabled
+    oneshot
+
+on property:persist.service.kernel.enable=6
+    restart log-kernel
+
+on property:persist.service.kernel.enable=5
+    restart log-kernel
+
+on property:persist.service.kernel.enable=4
+    restart log-kernel
+
+on property:persist.service.kernel.enable=3
+    restart log-kernel
+
+on property:persist.service.kernel.enable=2
+    restart log-kernel
+
+on property:persist.service.kernel.enable=1
+    restart log-kernel
+
+on property:persist.service.kernel.enable=0
+    stop log-kernel
+
+# logcat main
+service logcat-main /system/bin/sh /system/bin/logger_main.sh
+    class main
+    disabled
+    oneshot
+
+on property:persist.service.main.enable=6
+    restart logcat-main
+
+on property:persist.service.main.enable=5
+    restart logcat-main
+
+on property:persist.service.main.enable=4
+    restart logcat-main
+
+on property:persist.service.main.enable=3
+    restart logcat-main
+
+on property:persist.service.main.enable=2
+    restart logcat-main
+
+on property:persist.service.main.enable=1
+    restart logcat-main
+
+on property:persist.service.main.enable=0
+    stop logcat-main
+
+# logcat system
+service logcat-system /system/bin/sh /system/bin/logger_system.sh
+    class main
+    disabled
+    oneshot
+
+on property:persist.service.system.enable=6
+    restart logcat-system
+
+on property:persist.service.system.enable=5
+    restart logcat-system
+
+on property:persist.service.system.enable=4
+    restart logcat-system
+
+on property:persist.service.system.enable=3
+    restart logcat-system
+
+on property:persist.service.system.enable=2
+    restart logcat-system
+
+on property:persist.service.system.enable=1
+    restart logcat-system
+
+on property:persist.service.system.enable=0
+    stop logcat-system
+
+# logcat radio
+service logcat-radio /system/bin/sh /system/bin/logger_radio.sh
+    class main
+    disabled
+    oneshot
+
+on property:persist.service.radio.enable=6
+    restart logcat-radio
+
+on property:persist.service.radio.enable=5
+    restart logcat-radio
+
+on property:persist.service.radio.enable=4
+    restart logcat-radio
+
+on property:persist.service.radio.enable=3
+    restart logcat-radio
+
+on property:persist.service.radio.enable=2
+    restart logcat-radio
+
+on property:persist.service.radio.enable=1
+    restart logcat-radio
+
+on property:persist.service.radio.enable=0
+    stop logcat-radio
+
+# logcat events
+service logcat-events /system/bin/sh /system/bin/logger_events.sh
+    class main
+    disabled
+    oneshot
+
+on property:persist.service.events.enable=6
+    restart logcat-events
+
+on property:persist.service.events.enable=5
+    restart logcat-events
+
+on property:persist.service.events.enable=4
+    restart logcat-events
+
+on property:persist.service.events.enable=3
+    restart logcat-events
+
+on property:persist.service.events.enable=2
+    restart logcat-events
+
+on property:persist.service.events.enable=1
+    restart logcat-events
+
+on property:persist.service.events.enable=0
+    stop logcat-events
+
+#tcpdump - packet log
+service log-packet /system/bin/sh /system/bin/logger_packet.sh
+    class main
+    disabled
+    oneshot
+
+on property:persist.service.packet.enable=1
+    start log-packet
+
+on property:persist.service.packet.enable=0
+    stop log-packet
+
+# write eventlog for boot animation end
+service write_event_log /system/bin/write_event_log 55000
+    user system
+    group system
+    disabled
+    oneshot
+
+on property:init.svc.bootanim=stopped
+    start write_event_log

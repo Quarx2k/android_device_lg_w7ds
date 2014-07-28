@@ -1,0 +1,126 @@
+#CAPP_CKERROR_REPORTER
+import init.ckerror.rc
+
+on post-fs
+    #persist-lg
+    chown system system /persist-lg
+    chmod 0771 /persist-lg
+
+on post-fs-data
+    #CAPP_SECUREBOOT
+    exec /sbin/wallpaper -ap
+    wait /sbin/wallpaper
+
+    #CAPP_FONTS
+    mkdir /data/font 775 system system
+    chmod 775 /data/font
+    mkdir /data/font/config 775 system system
+    chmod 775 /data/font/config
+    mkdir /data/font/download 775 system system
+    chmod 775 /data/font/download
+
+    #persist-lg
+    chown system system /persist-lg
+    chmod 0771 /persist-lg
+
+    #LGDRM
+    mkdir /data/lgdrm 0770 lgdrm lgdrm_acc
+    mkdir /persist-lg/lgdrm 0770 lgdrm lgdrm_acc
+
+    #Widevine
+    mkdir /persist-lg/widevine 0770 drm system
+
+    #Widevine firmware
+    mkdir /persist-lg/firmware 0771 system system
+    exec /system/bin/cpfirmware widevine /persist-lg/firmware
+
+    #Secure clock
+    mkdir /persist-lg/secclk 0700 system system
+
+    #DivX DRM
+    mkdir /persist-lg/multimedia 0770 media divxdrm
+    mkdir /persist-lg/multimedia/nx 0770 media divxdrm
+    mkdir /persist-lg/multimedia/uma 0770 media divxdrm
+    mkdir /persist-lg/multimedia/scnt 0770 media divxdrm
+    mkdir /persist-lg/multimedia/scnt/sdadf 0770 media divxdrm
+
+    #CAPP_BLUEERROR_HANDLER: temp version, it will be removed
+    chown root system /data/dontpanic
+    chmod 0775 /data/dontpanic
+
+    #LGMDM [a1-mdm-dev@lge.com][ID-MDM-77][ID-MDM-289]
+    mkdir /data/system/lgmdm 0700 system system
+#CAPP_RESERVED_USERDATA
+on property:ro.reserve.blockcount=*
+    exec /system/bin/tune2fs -r $ro.reserve.blockcount \
+              -u system -g system $ro.reserve.userdata
+
+#CAPP_POWEROFF_ANI
+service shutdownanim /system/bin/shutdownanimation
+    user graphics
+    group graphics system
+    disabled
+    oneshot
+
+#CAPP_NFS
+service nfsserversetup /system/bin/nfsserversetup
+    class late_start
+    user root
+    oneshot
+
+#CAPP_MPROFILER
+service lgprofd /system/bin/lgprofd
+    socket lgprofd stream 666
+
+
+#Application Manager ENABLE_UNINSTALL
+service enable_uninstall  /system/vendor/bin/enable_uninstall.sh
+    disabled
+    oneshot
+
+#Application Manager ENABLE_UNINSTALL
+on property:vold.post_fs_data_done=1
+    start enable_uninstall
+
+#CAPP_LOGCATCHER
+service digicl /system/bin/digicl.sh
+    class main
+    disabled
+    oneshot
+
+#CAPP_LOGCATCHER
+service quickdump /system/bin/quickdump.sh
+    class main
+    disabled
+    oneshot
+    ioprio rt 0
+    keycodes 114 115 116
+
+#CAPP_NFS
+service nfskill /system/bin/nfskillprocess
+    disabled
+    oneshot
+    user root
+
+on property:vold.decrypt=trigger_shutdown_framework
+    start nfskill
+
+#Application Manager NTCODE work
+service ntcode_listing /system/vendor/bin/ntcode_listing.sh
+    disabled
+    oneshot
+
+#Application Manager NTCODE work
+on property:persist.sys.mcc-list=*
+    start ntcode_listing
+
+#Useless apks delete
+service apk_delete /system/vendor/bin/apk_delete.sh
+    user root
+    group root
+    disabled
+    oneshot
+
+#Useless apks delete
+on property:persist.data.sbp.update=1
+    start apk_delete
