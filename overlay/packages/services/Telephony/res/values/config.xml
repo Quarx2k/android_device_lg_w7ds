@@ -23,7 +23,7 @@
     <bool name="ignore_perso_locked_events">true</bool>
 
     <!-- This device implements a noise suppression device for in call audio-->
-    <bool name="has_in_call_noise_suppression">false</bool>
+    <bool name="has_in_call_noise_suppression">true</bool>
 
     <!-- Flag indicating if the tty is enabled -->
     <bool name="tty_enabled">true</bool>

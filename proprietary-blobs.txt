@@ -141,13 +141,16 @@ lib/libchromatix_imx219_default_video.so
 lib/libchromatix_imx219_preview.so
 lib/libchromatix_imx219_snapshot.so
 lib/libmmcamera_hi707.so
+lib/libmmcamera_hi543.so
+lib/libmmcamera_imx111.so
+lib/libmmcamera_imx119.so
+lib/libmmcamera_imx179.so
 lib/libmmcamera_interface.so
 lib/libmorpho_image_stab31.so
 lib/libmorpho_memory_allocator.so
 lib/libmorpho_panorama_gp.so
 lib/libmorpho_panorama_wa_viewer.so
 lib/libmmjpeg_interface.so
-lib/libqomx_core.so
 vendor/lib/liboemcamera.so
 vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera2_stats_algorithm.so
@@ -172,10 +175,6 @@ vendor/lib/libfastcvopt.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
-vendor/lib/libmmcamera_hi543.so
-vendor/lib/libmmcamera_imx111.so
-vendor/lib/libmmcamera_imx119.so
-vendor/lib/libmmcamera_imx179.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
@@ -189,6 +188,18 @@ vendor/lib/libmmcamera_imx179_eeprom.so
 vendor/lib/libmmcamera_imx219_eeprom.so
 vendor/lib/libmmcamera_mt9m114.so
 vendor/lib/libmmcamera_tuning.so
+
+vendor/lib/libmm-hdcpmgr.so
+
+# Media
+lib/libqomx_core.so
+lib/libdashplayer.so
+vendor/lib/libmmipstreamaal.so
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxWmaDec.so
 
 # Thermal daemon
 bin/thermal-engine
