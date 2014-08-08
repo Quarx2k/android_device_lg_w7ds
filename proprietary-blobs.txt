@@ -5,30 +5,30 @@ vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 
 # Firmwares
-vendor/etc/firmware/a225p5_pm4.fw
-vendor/etc/firmware/a225_pm4.fw
-vendor/etc/firmware/a300_pm4.fw
-vendor/etc/firmware/a330_pm4.fw
-vendor/etc/firmware/cpp_firmware_v1_1_6.fw
-vendor/etc/firmware/keymaster.b00
-vendor/etc/firmware/keymaster.b02
-vendor/etc/firmware/keymaster.mdt
-vendor/etc/firmware/leia_pm4_470.fw
-vendor/etc/firmware/venus.b01
-vendor/etc/firmware/venus.b03
-vendor/etc/firmware/venus.mbn
-vendor/etc/firmware/a225_pfp.fw
-vendor/etc/firmware/a300_pfp.fw
-vendor/etc/firmware/a330_pfp.fw
-vendor/etc/firmware/cpp_firmware_v1_1_1.fw
-vendor/etc/firmware/cpp_firmware_v1_2_0.fw
-vendor/etc/firmware/keymaster.b01
-vendor/etc/firmware/keymaster.b03
-vendor/etc/firmware/leia_pfp_470.fw
-vendor/etc/firmware/venus.b00
-vendor/etc/firmware/venus.b02
-vendor/etc/firmware/venus.b04
-vendor/etc/firmware/venus.mdt
+vendor/firmware/a225p5_pm4.fw
+vendor/firmware/a225_pm4.fw
+vendor/firmware/a300_pm4.fw
+vendor/firmware/a330_pm4.fw
+vendor/firmware/cpp_firmware_v1_1_6.fw
+vendor/firmware/keymaster.b00
+vendor/firmware/keymaster.b02
+vendor/firmware/keymaster.mdt
+vendor/firmware/leia_pm4_470.fw
+vendor/firmware/venus.b01
+vendor/firmware/venus.b03
+vendor/firmware/venus.mbn
+vendor/firmware/a225_pfp.fw
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a330_pfp.fw
+vendor/firmware/cpp_firmware_v1_1_1.fw
+vendor/firmware/cpp_firmware_v1_2_0.fw
+vendor/firmware/keymaster.b01
+vendor/firmware/keymaster.b03
+vendor/firmware/leia_pfp_470.fw
+vendor/firmware/venus.b00
+vendor/firmware/venus.b02
+vendor/firmware/venus.b04
+vendor/firmware/venus.mdt
 
 # Audio
 etc/ACDB/Bluetooth_cal.acdb
@@ -243,9 +243,14 @@ vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-dplmedia.so
 
+# IRDA
+bin/irrcServer
+lib/libirrc.so
+lib/libirrcClient.so
+lib/libirrcJni.so
+
 # We need it?
 -bin/port-bridge
--bin/irrcServer
 bin/riva_ramdump
 bin/imsdatadaemon
 bin/imsqmidaemon
@@ -256,5 +261,4 @@ vendor/lib/hw/flp.default.so
 vendor/lib/libdisp-aba.so
 vendor/lib/libcneapiclient.so
 lib/libcnefeatureconfig.so
-lib/libirrc.so
 lib/liblgewg.so

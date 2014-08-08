@@ -80,8 +80,8 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/sec_config:system/etc/sec_config \
     device/lge/w7/prebuilt/etc/izat.conf:system/etc/izat.conf \
     device/lge/w7/prebuilt/etc/boot_fixup:system/etc/boot_fixup \
-    device/lge/w7/prebuilt/etc/nfc-nci.conf:system/etc/nfc-nci.conf \
-    device/lge/w7/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml\
+    device/lge/w7/prebuilt/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    device/lge/w7/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
     device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf \
 
 # Ramdisk

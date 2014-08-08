@@ -46,9 +46,6 @@ drm.service.enabled=true
 ro.lge.audio_soundexception=true
 ro.lge.audio_soundprofile=true
 persist.lg.data.autoprof.msim=true
-net.tethering.noprovisioning=true
-persist.lg.data.fd=-1
-persist.service.crash.enable=0
 audio.offload.disable=0
 
 log.tag.GpsLocationProvider=DEBUG
@@ -109,9 +106,6 @@ ro.qc.sdk.audio.fluencetype=none
 persist.audio.fluence.voicecall=false
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=false
-
-# Reduce Background apps limit
-ro.sys.fw.bg_apps_limit=20
 
 # Enable/disable cabl
 ro.qualcomm.cabl=0
@@ -190,8 +184,4 @@ ro.build.sbp=1
 ro.lge.custLanguageSet=true
 ro.lge.dataprotect=1
 
-ro.qc.sdk.izat.premium_enabled=1
-ro.qc.sdk.izat.service_mask=0x0
-persist.gps.qc_nlp_in_use=0
-ro.gps.agps_provider=1
 ro.lge.proximity.delay=25
