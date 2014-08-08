@@ -5,31 +5,30 @@ vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 
 # Firmwares
-etc/firmware/a225p5_pm4.fw
-etc/firmware/a225_pm4.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/a330_pm4.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/keymaster.b00
-etc/firmware/keymaster.b02
-etc/firmware/keymaster.mdt
-etc/firmware/leia_pm4_470.fw
-etc/firmware/venus.b01
-etc/firmware/venus.b03
-etc/firmware/venus.mbn
-etc/firmware/a225_pfp.fw
-etc/firmware/a300_pfp.fw
-etc/firmware/a330_pfp.fw
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/keymaster.b01
-etc/firmware/keymaster.b03
-etc/firmware/leia_pfp_470.fw
-etc/firmware/venus.b00
-etc/firmware/venus.b02
-etc/firmware/venus.b04
-etc/firmware/venus.mdt
-etc/firmware/wlan/prima/WCNSS_cfg.dat
+vendor/etc/firmware/a225p5_pm4.fw
+vendor/etc/firmware/a225_pm4.fw
+vendor/etc/firmware/a300_pm4.fw
+vendor/etc/firmware/a330_pm4.fw
+vendor/etc/firmware/cpp_firmware_v1_1_6.fw
+vendor/etc/firmware/keymaster.b00
+vendor/etc/firmware/keymaster.b02
+vendor/etc/firmware/keymaster.mdt
+vendor/etc/firmware/leia_pm4_470.fw
+vendor/etc/firmware/venus.b01
+vendor/etc/firmware/venus.b03
+vendor/etc/firmware/venus.mbn
+vendor/etc/firmware/a225_pfp.fw
+vendor/etc/firmware/a300_pfp.fw
+vendor/etc/firmware/a330_pfp.fw
+vendor/etc/firmware/cpp_firmware_v1_1_1.fw
+vendor/etc/firmware/cpp_firmware_v1_2_0.fw
+vendor/etc/firmware/keymaster.b01
+vendor/etc/firmware/keymaster.b03
+vendor/etc/firmware/leia_pfp_470.fw
+vendor/etc/firmware/venus.b00
+vendor/etc/firmware/venus.b02
+vendor/etc/firmware/venus.b04
+vendor/etc/firmware/venus.mdt
 
 # Audio
 etc/ACDB/Bluetooth_cal.acdb
@@ -188,7 +187,6 @@ vendor/lib/libmmcamera_imx179_eeprom.so
 vendor/lib/libmmcamera_imx219_eeprom.so
 vendor/lib/libmmcamera_mt9m114.so
 vendor/lib/libmmcamera_tuning.so
-
 vendor/lib/libmm-hdcpmgr.so
 
 # Media
@@ -254,6 +252,7 @@ bin/imsqmidaemon
 bin/adsprpcd
 bin/bnrd
 bin/ssr_diag
+vendor/lib/hw/flp.default.so
 vendor/lib/libdisp-aba.so
 vendor/lib/libcneapiclient.so
 lib/libcnefeatureconfig.so

@@ -1100,6 +1100,7 @@ on charger-monitor
 #LGE_CHANGE_E, 20131206 add AICL start routin
 
 # CM Performance Profiles
+
 # Powersave
 on property:sys.perf.profile=0
     start mpdecision
@@ -1119,4 +1120,5 @@ on property:sys.perf.profile=2
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_govern
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
+    write /sys/class/devfreq/qcom,cpubw.65 performance
