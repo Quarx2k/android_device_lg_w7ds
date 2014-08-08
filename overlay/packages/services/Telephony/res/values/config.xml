@@ -32,5 +32,5 @@
     <bool name="config_enabled_lte" translatable="false">false</bool>
 
     <!-- Flag indicating if the phone is a world phone-->
-    <bool name="world_phone">true</bool>
+    <bool name="world_phone">false</bool>
 </resources>
