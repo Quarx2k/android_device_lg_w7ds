@@ -45,9 +45,9 @@ vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbloader.so
--lib/libtinyalsa.so
--lib/libtinycompress.so
--lib/hw/audio.primary.msm8226.so
+lib/libtinyalsa.so
+lib/libtinycompress.so
+lib/hw/audio.primary.msm8226.so
 bin/fm_qsoc_patches
 
 # Listen service
