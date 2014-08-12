@@ -1,0 +1,9 @@
+#!/system/bin/sh
+
+country=`getprop wlan.crda.country`
+
+# crda takes input in COUNTRY environment variable
+if [ $country != "" ]
+then
+COUNTRY="$country" /system/bin/crda
+fi

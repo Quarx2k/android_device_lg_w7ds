@@ -227,12 +227,12 @@ vendor/lib/libbmc050.so
 
 # Other
 vendor/lib/libQSEEComAPI.so
-bin/irsc_util
+-bin/irsc_util
 bin/mm-pp-daemon
 vendor/lib/libmm-abl-oem.so
 vendor/lib/libmm-abl.so
-bin/ptt_socket_app
-lib/libqsap_sdk.so
+-bin/ptt_socket_app
+-lib/libqsap_sdk.so
 
 #
 bin/ims_rtp_daemon
@@ -251,14 +251,14 @@ lib/libirrcJni.so
 
 # We need it?
 -bin/port-bridge
-bin/riva_ramdump
-bin/imsdatadaemon
-bin/imsqmidaemon
-bin/adsprpcd
-bin/bnrd
-bin/ssr_diag
+-bin/riva_ramdump
+-bin/imsdatadaemon
+-bin/imsqmidaemon
+-bin/adsprpcd
+-bin/bnrd
+-bin/ssr_diag
 vendor/lib/hw/flp.default.so
-vendor/lib/libdisp-aba.so
-vendor/lib/libcneapiclient.so
-lib/libcnefeatureconfig.so
-lib/liblgewg.so
+-vendor/lib/libdisp-aba.so
+-vendor/lib/libcneapiclient.so
+-lib/libcnefeatureconfig.so
+-lib/liblgewg.so
