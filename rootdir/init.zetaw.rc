@@ -156,6 +156,16 @@ on boot
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
+    #Create directory used by sensor subsystem(dsps)
+    mkdir /data/system/sensors
+    chmod 665 /data/system/sensors
+    write /data/system/sensors/settings 1
+    chmod 660 /data/system/sensors/settings
+    # AKM setting data
+    mkdir /data/misc/sensors
+    chmod 775 /data/misc/sensors
+    mkdir /persist/sensors
+    chmod 775 /persist/sensors
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -516,7 +526,6 @@ service sensors /system/bin/sensors.qcom
     class late_start
     user root
     group root radio system
-    disabled
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target

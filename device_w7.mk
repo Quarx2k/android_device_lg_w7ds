@@ -83,6 +83,7 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/lge/w7/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
     device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf \
+    device/lge/w7/prebuilt/etc/init.d/10nfc_checker:system/etc/init.d/10nfc_checker
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -356,10 +357,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # NFC packages
 PRODUCT_PACKAGES += \
-    Tag \
-    com.android.nfc_extras \
-    nfc_nci.w7 \
-    NfcNci
+    nfc.default \
+    libnfc \
+    libnfc_jni \
+    Nfc
 
 NFCEE_ACCESS_PATH := device/lge/w7/prebuilt/etc/nfcee_access.xml
 

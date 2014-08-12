@@ -29,6 +29,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
@@ -36,6 +37,35 @@
 #include "util.h"
 
 #include "init_msm.h"
+
+#define CHUNK 2048 /* read 2048 bytes at a time */
+
+int check_cmdline(char param[]) {
+
+    char buf[CHUNK];
+    FILE *file;
+    size_t nread;
+    file = fopen("/proc/cmdline", "r");
+    if (file) {
+        while ((nread = fread(buf, 1, sizeof buf, file)) > 0) {
+                /* fwrite(buf, 1, nread, stdout); */
+                char delims[] = " ";
+                char *word = NULL;
+                word = strtok(buf, delims);
+
+                while(word != NULL) {
+                        if (!strcmp(param,word)) {
+                                fclose(file);
+                                return 1;
+                        }
+                        word = strtok(NULL, delims);
+                }
+        }
+    }	
+    fclose(file);
+    return 0;
+}
+
  
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
@@ -49,31 +79,52 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     property_get("ro.boot.serialno", serial);
     if (strncmp(serial, "LGD410", 6) == 0) {
-        /* D410 */
-        property_set("ro.product.device", "w7ds");
-        property_set("ro.product.model", "LG-D410");
+        /* D415, D410n (is this exist!?) */
+        if (check_cmdline("model.name=LG-D410n") == 1) {
+                property_set("ro.product.device", "w7nds");
+                property_set("ro.product.model", "LG-D410n");
+        } else {
+                property_set("ro.product.device", "w7ds");
+                property_set("ro.product.model", "LG-D410");
+        }
         property_set("ro.build.description", "w7ds_global_com-user 4.4.2 KOT49I.A1398228431 1398228431 release-keys");
         property_set("ro.build.fingerprint", "lge/w7ds_global_com/w7ds:4.4.2/KOT49I.A1398228431/1398228431:user/release-keys");
         property_set("persist.radio.multisim.config", "dsds");
+        property_set("telephony.lteOnCdmaDevice", "0");
     } else if (strncmp(serial, "LGD405", 6) == 0) {
-        /* D405 */
-        property_set("ro.product.device", "w7");
-        property_set("ro.product.model", "LG-D405");
+        /* D405, D405n */
+        if (check_cmdline("model.name=LG-D405n") == 1) {
+                property_set("ro.product.model", "LG-D405n");
+                property_set("ro.product.device", "w7n");
+        } else {
+                property_set("ro.product.model", "LG-D405");
+                property_set("ro.product.device", "w7");
+        }
         property_set("ro.build.description", "w7_global_com-user 4.4.2 KOT49I.A1402966338 1402966338 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_global_com/w7:4.4.2/KOT49I.A1402966338/1402966338:user/release-keys");
         property_set("persist.radio.multisim.config", "");
+        property_set("telephony.lteOnCdmaDevice", "0");
     } else if (strncmp(serial, "LGD415", 6) == 0) {
-        /* D415 */
-        property_set("ro.product.device", "w7");
-        property_set("ro.product.model", "LG-D415");
+        /* D415, D415n (is this exist!?) */
+        if (check_cmdline("model.name=LG-D415n") == 1) {
+                property_set("ro.product.device", "w7nds");
+                property_set("ro.product.model", "LG-D415n");
+                property_set("persist.radio.multisim.config", "dsds");
+        } else {
+                property_set("ro.product.device", "w7");
+                property_set("ro.product.model", "LG-D415");
+                property_set("persist.radio.multisim.config", "");
+        }
         property_set("ro.build.description", "w7_tmo_us-user 4.4.2 KOT49I.D41510c D41510c.1393916607 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_tmo_us/w7:4.4.2/KOT49I.D41510c/D41510c.1393916607:user/release-keys");
-        property_set("persist.radio.multisim.config", "");
+	/* Should be LTE enabled for all D415? */
+        property_set("telephony.lteOnCdmaDevice", "1");
     } else {
         /* XXX */
         property_set("ro.product.device", "w7");
         property_set("ro.product.model", "Please write your model name to agent00791@gmail.com");
         property_set("persist.radio.multisim.config", "");
+        property_set("telephony.lteOnCdmaDevice", "0");
     }
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
