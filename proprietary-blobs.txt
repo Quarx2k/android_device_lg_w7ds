@@ -248,6 +248,7 @@ bin/irrcServer
 lib/libirrc.so
 lib/libirrcClient.so
 lib/libirrcJni.so
+lib/liblgewg.so
 
 # We need it?
 -bin/port-bridge
@@ -261,4 +262,4 @@ vendor/lib/hw/flp.default.so
 -vendor/lib/libdisp-aba.so
 -vendor/lib/libcneapiclient.so
 -lib/libcnefeatureconfig.so
--lib/liblgewg.so
+
