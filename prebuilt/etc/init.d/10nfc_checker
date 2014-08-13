@@ -6,5 +6,7 @@ if [ "$model" = "LG-D410" ] || ["$model" = "LG-D405" ]  || ["$model" = "LG-D405n
 	mount -o remount,rw /system
 	rm -rf /system/etc/permissions/android.hardware.nfc.xml
 	rm -rf /system/etc/permissions/android.hardware.nfc.hce.xml
+	rm -rf /system/lib/hw/nfc_nci.w7.so
+	rm -rf /system/app/NfcNci.apk
 	mount -o remount,ro /system
 fi

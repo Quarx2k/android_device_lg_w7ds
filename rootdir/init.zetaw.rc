@@ -58,6 +58,8 @@ on init
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
+    # NFC fix
+    symlink /dev/pn547 /dev/pn544
 
 # SD Enc
     setprop ro.ssbd.session /dev/block/platform/msm_sdcc.1/by-name/eksst

@@ -262,4 +262,4 @@ vendor/lib/hw/flp.default.so
 -vendor/lib/libdisp-aba.so
 -vendor/lib/libcneapiclient.so
 -lib/libcnefeatureconfig.so
-
+vendor/firmware/libpn547_fw.so

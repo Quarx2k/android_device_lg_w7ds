@@ -46,7 +46,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
 # Configs
 PRODUCT_COPY_FILES += \
@@ -81,6 +82,8 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/izat.conf:system/etc/izat.conf \
     device/lge/w7/prebuilt/etc/boot_fixup:system/etc/boot_fixup \
     device/lge/w7/prebuilt/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    device/lge/w7/prebuilt/etc/nfc-nci.conf:system/etc/nfc-nci.conf \
+    device/lge/w7/prebuilt/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/lge/w7/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
     device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf \
     device/lge/w7/prebuilt/etc/init.d/10nfc_checker:system/etc/init.d/10nfc_checker
@@ -357,10 +360,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # NFC packages
 PRODUCT_PACKAGES += \
-    nfc.default \
-    libnfc \
-    libnfc_jni \
-    Nfc
+    NfcNci \
+    Tag \
+    nfc_nci.w7 \
+    com.android.nfc_extras
 
 NFCEE_ACCESS_PATH := device/lge/w7/prebuilt/etc/nfcee_access.xml
 
