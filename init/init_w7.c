@@ -83,6 +83,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         if (check_cmdline("model.name=LG-D410n") == 1) {
                 property_set("ro.product.device", "w7nds");
                 property_set("ro.product.model", "LG-D410n");
+                property_set("ro.nfc.port", "I2C");
         } else {
                 property_set("ro.product.device", "w7ds");
                 property_set("ro.product.model", "LG-D410");
@@ -96,6 +97,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         if (check_cmdline("model.name=LG-D405n") == 1) {
                 property_set("ro.product.model", "LG-D405n");
                 property_set("ro.product.device", "w7n");
+                property_set("ro.nfc.port", "I2C");
         } else {
                 property_set("ro.product.model", "LG-D405");
                 property_set("ro.product.device", "w7");
@@ -115,9 +117,10 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
                 property_set("ro.product.model", "LG-D415");
                 property_set("persist.radio.multisim.config", "");
         }
+        property_set("ro.nfc.port", "I2C");
         property_set("ro.build.description", "w7_tmo_us-user 4.4.2 KOT49I.D41510c D41510c.1393916607 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_tmo_us/w7:4.4.2/KOT49I.D41510c/D41510c.1393916607:user/release-keys");
-        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("telephony.lteOnCdmaDevice", "0");
     } else {
         /* XXX */
         property_set("ro.product.device", "w7");
