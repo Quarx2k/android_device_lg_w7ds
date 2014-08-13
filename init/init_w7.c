@@ -117,7 +117,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         }
         property_set("ro.build.description", "w7_tmo_us-user 4.4.2 KOT49I.D41510c D41510c.1393916607 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_tmo_us/w7:4.4.2/KOT49I.D41510c/D41510c.1393916607:user/release-keys");
-	/* Should be LTE enabled for all D415? */
         property_set("telephony.lteOnCdmaDevice", "1");
     } else {
         /* XXX */
