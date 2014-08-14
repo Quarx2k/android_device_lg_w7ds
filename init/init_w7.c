@@ -80,9 +80,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.boot.serialno", serial);
     if (strncmp(serial, "LGD410", 6) == 0) {
         /* D415, D410n (is this exist!?) */
-        if (check_cmdline("model.name=LG-D410n") == 1) {
+        if (check_cmdline("model.name=LG-D410hn") == 1) {
                 property_set("ro.product.device", "w7nds");
-                property_set("ro.product.model", "LG-D410n");
+                property_set("ro.product.model", "LG-D410hn");
                 property_set("ro.nfc.port", "I2C");
         } else {
                 property_set("ro.product.device", "w7ds");
