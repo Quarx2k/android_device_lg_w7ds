@@ -1,3 +1,88 @@
 #
-# system.prop for w7ds
+# system.prop for w7
 #
+############################################################ CLEANUP ME PLEASE QUARX ###########################################################
+
+# Use reference RIL for initial bringup
+rild.libpath=/vendor/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+persist.radio.msgtunnel.start=false
+# Start in cdma mode
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+# LGE_CHANGE_S by.mun@lge.com 2013-08-14 turn off CdmaLTEPhone for W7
+telephony.lteOnCdmaDevice=0
+ro.telephony.default_network=0
+
+ro.ril.enable.amr.wideband=1
+ro.lge.proximity.delay=25
+ro.telephony.call_ring.delay=0
+
+persist.radio.adb_log_on=1
+persist.radio.qcril_am_enabled=1
+wlan.chip.vendor=qcom
+wlan.chip.version=wcn
+wifi.lge.patch=true
+wifi.lge.sleeppolicy=0
+wifi.lge.offdelay=false
+wlan.lge.concurrency=MCC
+wlan.lge.supportsimaka=YES
+wifi.lge.hanglessid=false
+drm.service.enabled=true
+persist.lg.data.autoprof.msim=true
+persist.cne.feature=1
+debug.sf.fb_always_on=1
+persist.hwc.mdpcomp.enable=true
+dev.pm.dyn_samplingrate=1
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
+mm.enable.qcom_parser=37491
+vidc.debug.level=0
+ro.qualcomm.sensors.qmd=false
+ro.qc.sdk.sensors.gestures=true
+ro.qualcomm.sensors.pedometer=false
+ro.qc.sensors.step_detector=true
+ro.qc.sensors.step_counter=true
+ro.qualcomm.sensors.pam=true
+ro.qualcomm.sensors.scrn_ortn=true
+ro.qualcomm.sensors.smd=true
+ro.qualcomm.sensors.game_rv=false
+ro.qualcomm.sensors.georv=true
+ro.qc.sensors.smgr_mag_cal_en=false
+ro.qc.sensors.max_grav_no_gyro=50
+ro.qc.sensors.max_geomag_rotvec=50
+debug.qualcomm.sns.hal=1
+debug.qualcomm.sns.daemon=e
+debug.qualcomm.sns.libsensor1=e
+persist.sys.ssr.restart_level=3
+persist.sys.strictmode.disable=true
+persist.sys.logkit.ctrlcode=0
+ro.lge.irrc.type=sw
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
+tunnel.audio.encode = true
+persist.gsm.sms.forcegsm7=1
+ro.sf.lcd_density=240
+ro.qc.sdk.izat.premium_enabled=1
+ro.qc.sdk.izat.service_mask=0x0
+persist.gps.qc_nlp_in_use=0
+ro.gps.agps_provider=1
+persist.qcril.disable_retry=true
+persist.service.crash.enable=0
+ro.config.vc_call_vol_steps=6
+persist.data.sbp.update=0
+persist.radio.rat_on=legacy
+ro.lge.proximity.delay=25
