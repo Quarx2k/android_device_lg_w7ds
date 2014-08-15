@@ -201,15 +201,15 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 
-№ Adsp
+# Adsp
 bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libfastcvadsp_stub.so
-vendor/lib/rfsa/libadsp_denoise_skel.so
-vendor/lib/rfsa/libdspCV_skel.so
-vendor/lib/rfsa/libfastcvadsp_skel.so
-vendor/lib/rfsa/libfastcvadsp.so
+vendor/lib/rfsa/adsp/libadsp_denoise_skel.so
+vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp.so
 
 # Thermal daemon
 bin/thermal-engine
