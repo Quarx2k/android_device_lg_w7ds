@@ -260,8 +260,12 @@ lib/libirrc.so
 lib/libirrcClient.so
 lib/libirrcJni.so
 lib/liblgewg.so
+app/LGQRemote.apk
+app/QuicksetSDK.apk
+media/audio/ui/IR_normal.ogg
 
 # We need it?
+
 -bin/port-bridge
 -bin/riva_ramdump
 -bin/imsdatadaemon
