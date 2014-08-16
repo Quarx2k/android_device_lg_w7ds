@@ -68,7 +68,8 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/lge/w7/prebuilt/etc/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf \
     device/lge/w7/prebuilt/usr/idc/touch_dev.idc:system/usr/idc/touch_dev.idc \
-    device/lge/w7/prebuilt/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    device/lge/w7/prebuilt/usr/keylayout/gpio-keys_d415.kl:system/usr/keylayout/gpio-keys_d415.kl \
+    device/lge/w7/prebuilt/usr/keylayout/gpio-keys_d410.kl:system/usr/keylayout/gpio-keys_d410.kl \
     device/lge/w7/prebuilt/etc/init.zetaw.fm.sh:system/etc/init.zetaw.fm.sh \
     device/lge/w7/prebuilt/etc/init.zetaw.ssr.wifi.sh:system/etc/init.zetaw.ssr.wifi.sh \
     device/lge/w7/prebuilt/etc/init.zetaw.wifi.sh:system/etc/init.zetaw.wifi.sh \
@@ -86,7 +87,8 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/lge/w7/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
     device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf \
-    device/lge/w7/prebuilt/etc/init.d/10nfc_checker:system/etc/init.d/10nfc_checker
+    device/lge/w7/prebuilt/etc/init.d/10nfc_checker:system/etc/init.d/10nfc_checker \
+    device/lge/w7/prebuilt/etc/init.d/11keys_checker:system/etc/init.d/11keys_checker
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -302,7 +304,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     lpa.decode=true \
-    qcom.hw.aac.encoder=true \
+    qcom.hw.aac.encoder=false \
     af.resampler.quality=255 \
     persist.audio.lowlatency.rec=false
 

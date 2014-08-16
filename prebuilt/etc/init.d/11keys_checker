@@ -1,0 +1,14 @@
+#!/system/bin/sh
+
+model=`getprop ro.product.model`
+mount -o remount,rw /system
+rm /system/usr/keylayout/gpio-keys.kl
+if [ "$model" = "LG-D410" ] || ["$model" = "LG-D41hn" ]; then
+	ln -s /system/usr/keylayout/gpio-keys_d410.kl /system/usr/keylayout/gpio-keys.kl 
+else
+	ln -s /system/usr/keylayout/gpio-keys_d415.kl /system/usr/keylayout/gpio-keys.kl
+fi
+
+mount -o remount,ro /system
+
+
