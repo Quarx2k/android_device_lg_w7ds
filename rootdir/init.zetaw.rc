@@ -38,23 +38,27 @@ on init
     mkdir /persist 0771 system system
     mkdir /persist-lg 0771 system system
     mkdir /sns 0775 system system
+
     mkdir /storage 0751 system sdcard_r
-    mkdir /storage/external_SD 0700 root root
+    mkdir /storage/sdcard1 0700 root root
     mkdir /mnt/media_rw 0700 media_rw media_rw
-    mkdir /mnt/media_rw/external_SD 0700 media_rw media_rw
-    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
-    export SECONDARY_STORAGE /storage/external_SD
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
+    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdisk
 
-    # Support legacy paths
+    # for backwards compatibility
     symlink /storage/emulated/legacy /sdcard
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+    symlink /storage/sdcard1 /extSdCard
+    symlink /storage/sdcard1 /mnt/extSdCard
+    symlink /storage/sdcard1 /external_sd
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
@@ -415,7 +419,11 @@ service zetaw-c_main-sh /system/bin/sh /init.class_main.sh
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
     
-service fuse_external_SD /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/external_SD /storage/external_SD
+service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
+    class late_start
+    disabled
+
+service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
     disabled
 

@@ -6,7 +6,7 @@
 # Currently we dont have e2fsck compiled. So fs check would failed.
 #
 #<src>                                                	<mnt_point>  		<type>  <mnt_flags and options>                                                         <fs_mgr_flags>
-/devices/msm_sdcc.2/mmc_host 				auto		  	vfat	defaults									voldmanaged=external_SD:auto,noemulatedsd
+/devices/msm_sdcc.2/mmc_host 				auto		  	vfat	defaults									voldmanaged=sdcard1:auto,noemulatedsd
 /dev/block/platform/msm_sdcc.1/by-name/system   	/system      		ext4    ro,barrier=1                                                                    wait,check
 /dev/block/platform/msm_sdcc.1/by-name/userdata       	/data        		ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard,data=ordered,errors=continue     wait,check,encryptable=/dev/block/platform/msm_sdcc.1/by-name/encrypt
 /dev/block/platform/msm_sdcc.1/by-name/persist        	/persist     		ext4    nosuid,nodev,barrier=1,data=ordered,nodelalloc                                  wait,check
