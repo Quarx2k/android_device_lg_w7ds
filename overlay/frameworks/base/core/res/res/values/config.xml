@@ -108,10 +108,17 @@
     <bool name="config_dontPreferApn">true</bool>
 
     <!-- Enable overlay for all location components. -->
-    <bool name="config_enableNetworkLocationOverlay" translatable="false">false</bool>
-    <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-    <bool name="config_enableFusedLocationOverlay" translatable="false">false</bool>
-    <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+    <string name="config_networkLocationProviderPackageName" translatable="false">@null</string>
+    <string name="config_fusedLocationProviderPackageName" translatable="false">com.android.location.fused</string>
+    <string name="config_geofenceProviderPackageName" translatable="false">com.qualcomm.location</string>
+    <bool name="config_enableNetworkLocationOverlay">true</bool>
+    <bool name="config_enableFusedLocationOverlay">true</bool>
+    <bool name="config_enableGeocoderOverlay">true</bool>
+    <bool name="config_enableGeofenceOverlay">true</bool>
+    <string-array translatable="false" name="config_locationProviderPackageNames">
+        <item>com.google.android.gms</item>
+        <item>com.android.location.fused</item>
+    </string-array>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>

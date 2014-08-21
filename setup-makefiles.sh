@@ -63,10 +63,10 @@ DEVICE_PACKAGE_OVERLAYS := vendor/$VENDOR/$DEVICE/overlay
 # Apps
 PRODUCT_PACKAGES += \\
     TimeService \\
-    qcrilmsgtunnel
+    qcrilmsgtunnel \\
+    com.qualcomm.location
 
 
-#com.qualcomm.location
 #com.qualcomm.services.location
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF
@@ -112,15 +112,15 @@ ifneq (\$(filter w7,\$(TARGET_DEVICE)),)
 
 LOCAL_PATH := \$(call my-dir)
 
-#include \$(CLEAR_VARS)
-#LOCAL_MODULE := com.qualcomm.location
-#LOCAL_MODULE_OWNER := $VENDOR
-#LOCAL_SRC_FILES := proprietary/app/com.qualcomm.location.apk
-#LOCAL_MODULE_TAGS := optional
-#LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-#LOCAL_MODULE_CLASS := APPS
-#LOCAL_CERTIFICATE := platform
-#include \$(BUILD_PREBUILT)
+include \$(CLEAR_VARS)
+LOCAL_MODULE := com.qualcomm.location
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/app/com.qualcomm.location.apk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_MODULE_CLASS := APPS
+LOCAL_CERTIFICATE := platform
+include \$(BUILD_PREBUILT)
 
 #include \$(CLEAR_VARS)
 #LOCAL_MODULE := com.qualcomm.services.location
