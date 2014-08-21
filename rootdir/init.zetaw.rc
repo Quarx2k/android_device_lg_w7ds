@@ -62,12 +62,24 @@ on init
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
+    wait /dev/block/platform/msm_sdcc.1/by-name/userdata
+    wait /dev/block/platform/msm_sdcc.1/by-name/cache
+    wait /dev/block/platform/msm_sdcc.1/by-name/drm
+    wait /dev/block/platform/msm_sdcc.1/by-name/sns
+    exec /sbin/setup_fs_static \
+        /dev/block/platform/msm_sdcc.1/by-name/userdata \
+        /dev/block/platform/msm_sdcc.1/by-name/cache \
+        /dev/block/platform/msm_sdcc.1/by-name/drm \
+        /dev/block/platform/msm_sdcc.1/by-name/sns \
+        no_reboot
+
     # NFC fix
     symlink /dev/pn547 /dev/pn544
 
 # SD Enc
     setprop ro.ssbd.session /dev/block/platform/msm_sdcc.1/by-name/eksst
     setprop ro.ssbd.offset 0
+
 on fs
 
 # sreadahead daemon
