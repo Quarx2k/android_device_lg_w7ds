@@ -4,10 +4,9 @@ model=`getprop ro.product.model`
 
 if [ "$model" = "LG-D410" ] || [ "$model" = "LG-D405" ]; then
 	mount -o remount,rw /system
-	rm -rf /system/etc/permissions/android.hardware.nfc.xml
-	rm -rf /system/etc/permissions/android.hardware.nfc.hce.xml
-	rm -rf /system/lib/hw/nfc_nci.w7.so
-	rm -rf /system/app/NfcNci.apk
-	rm -rf /system/etc/init.d/10nfc_checker
+	chmod 000 /system/etc/permissions/android.hardware.nfc.xml
+	chmod 000 /system/etc/permissions/android.hardware.nfc.hce.xml
+	chmod 000 /system/lib/hw/nfc_nci.w7.so
+	chmod 000 /system/app/NfcNci.apk
 	mount -o remount,ro /system
 fi
