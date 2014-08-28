@@ -97,7 +97,6 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/rootdir/fstab_f2fs.w7ds:root/fstab_f2fs.w7ds \
     device/lge/w7/rootdir/init.class_main.sh:root/init.class_main.sh \
     device/lge/w7/rootdir/init.lge.early.rc:root/init.lge.early.rc \
-    device/lge/w7/rootdir/init.lge.log.rc:root/init.lge.log.rc \
     device/lge/w7/rootdir/init.lge.rc:root/init.lge.rc \
     device/lge/w7/rootdir/init.mdm.sh:root/init.mdm.sh \
     device/lge/w7/rootdir/init.usb.rc:root/init.usb.rc \

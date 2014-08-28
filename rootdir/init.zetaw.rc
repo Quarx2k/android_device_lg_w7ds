@@ -26,7 +26,6 @@
 #
  
 import init.zetaw.usb.rc
-import init.lge.log.rc
 #LG_UPDATE_START :  move to init.zetaw.bt_vendor.rc to seperate vendor's resource 20140106, [START]
 import init.zetaw.bt_vendor.rc
 #LG_UPDATE_END :  20140106, [END]
@@ -113,33 +112,6 @@ on early-boot
     write /sys/module/lowmemorykiller/parameters/lmk_fast_run 0
 
 on boot
-# ADD LGODL
-    chmod 0755 /system/bin/lg_dm_dev_router
-#LG_UPDATE_START :  move to init.zetaw.bt_vendor.rc to seperate vendor's resource 20140106, [START]
-#    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
-#    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
-#    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
-#    chown bluetooth bluetooth /proc/bluetooth/sleep/proto
-#    chown bluetooth bluetooth /sys/module/hci_uart/parameters/ath_lpm
-#    chown bluetooth bluetooth /sys/module/hci_uart/parameters/ath_btwrite
-#    chown system system /sys/module/sco/parameters/disable_esco
-#    chown bluetooth bluetooth /sys/module/hci_smd/parameters/hcismd_set
-#    chmod 0660 /sys/module/bluetooth_power/parameters/power
-#    chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
-#    chmod 0660 /sys/class/rfkill/rfkill0/state
-#    chmod 0660 /proc/bluetooth/sleep/proto
-#    chown bluetooth bluetooth /dev/ttyHS0
-#    chmod 0660 /sys/module/hci_uart/parameters/ath_lpm
-#    chmod 0660 /sys/module/hci_uart/parameters/ath_btwrite
-#    chmod 0660 /dev/ttyHS0
-#    chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
-#    chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
-#	 chown system system /sys/devices/platform/kcal_ctrl.0/kcal
-#	 chown system system /sys/devices/platform/kcal_ctrl.0/kcal_ctrl
-
-#    chmod 0660 /dev/ttyHS2
-#    chown bluetooth bluetooth /dev/ttyHS2
-#LG_UPDATE_END :  20140106, [END]
 
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -468,11 +440,6 @@ service rmt_storage /system/bin/rmt_storage
 on property:ro.boot.emmc=true
     start rmt_storage
 
-service rfs_access /system/bin/rfs_access
-   class core
-   user system
-   group system net_raw
-
 on property:ro.boot.emmc=true
     start rfs_access
 
@@ -606,12 +573,6 @@ service iprenew_wlan0 /system/bin/dhcpcd -n
 service iprenew_p2p /system/bin/dhcpcd -n
     class late_start
     disabled
-    oneshot
-
-service ptt_socket_app /system/bin/ptt_socket_app
-    class main
-    user system
-    group system
     oneshot
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
@@ -794,32 +755,6 @@ on property:ro.bootmode=chargerlogo
 service charger /charger
     class charger
 
-# Mobile DM Router
-service lg_dm_router /system/bin/lg_dm_router
-    class late_start
-    user system
-    group system
-    disabled
-    socket Full.DM.port stream 660 system system
-
-on property:persist.service.dm_app.enable=true
-    start lg_dm_router
-on property:persist.service.dm_app.enable=false
-    stop lg_dm_router
-
-# ADD LGODL
-service lg_dm_dev_router /system/bin/lg_dm_dev_router
-    class late_start
-    user root
-    group system sdcard_r sdcard_rw
-    disabled
-    oneshot
-
-on property:persist.service.lge.odl_on=true
-     start lg_dm_dev_router
-on property:persist.service.lge.odl_on=false
-
-
 service ssr_diag /system/bin/ssr_diag
     class late_start
     user system
@@ -887,21 +822,6 @@ service diag_mdlog_stop /system/bin/diag_mdlog -k
 on property:ro.minios.enable=1
     start zetaw-post-boot
 
-# Factory, ATD
-service atd /system/bin/atd /dev/ttyGS0 /dev/smd0
-    socket atd stream 0660 system inet
-    class main
-
-# Factory, MTSD lg-msp@lge.com
-service mtsd /system/bin/mtsd
-    class late_start
-    oneshot
-    socket mtsd.port stream 660 system system
-
-on property:sys.mts.forcemts=1
-    start mtsd
-on property:sys.mts.forcemts=0
-    stop mtsd
 #touch firmware upgrade on hiddenmenu
 on property:sys.lge.touchfirmware.update=1
     write /sys/devices/virtual/input/lge_touch/fw_upgrade 1
@@ -1007,21 +927,6 @@ on property:persist.service.ssr_dump.ssr=1
 on property:persist.service.ssr_dump.ssr=0
     write /sys/devices/fc880000.qcom,mss/subsys1/restart_level SYSTEM 
 
-# [BEGIN][LGE_WIFI][QCT][neo-wifi@lge.com] add riva_ramdump service
-on property:persist.service.rivadump.enable=1
-    write /sys/module/pil_pronto/parameters/enable_pronto_ramdump 1
-    start riva_ramdump
-on property:persist.service.rivadump.enable=0
-    write /sys/module/pil_pronto/parameters/enable_pronto_ramdump 0
-    stop riva_ramdump
-
-service riva_ramdump /system/bin/riva_ramdump
-    class late_start
-    user root
-    group system
-    disabled
-# [END][LGE_WIFI][QCT][neo-wifi@lge.com] add riva_ramdump service
-
 #LGE_CHANGE_S 2012.04 for MOCA
 service moca_service /system/bin/moca -s
     class late_start
@@ -1070,27 +975,19 @@ service irrcServer /system/bin/irrcServer
    group media
    onrestart restart irrcServer
 
-service ssbd /system/bin/ssbd
-    class main
-    socket ssbd stream 0660 root mount
-
 # CM Performance Profiles
-
 # Powersave
 on property:sys.perf.profile=0
-    start mpdecision
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
     write /sys/class/devfreq/qcom,cpubw.55 powersave
 
 # Balanced
 on property:sys.perf.profile=1
-    start mpdecision
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
     write /sys/class/devfreq/qcom,cpubw.55 msm_cpufreq
 
 # High performance
 on property:sys.perf.profile=2
-    stop mpdecision
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
