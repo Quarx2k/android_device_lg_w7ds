@@ -93,16 +93,16 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    device/lge/w7/rootdir/fstab.w7ds:root/fstab.w7ds \
-    device/lge/w7/rootdir/fstab_f2fs.w7ds:root/fstab_f2fs.w7ds \
+    device/lge/w7/rootdir/fstab.w7:root/fstab.w7 \
+    device/lge/w7/rootdir/fstab_f2fs.w7:root/fstab_f2fs.w7 \
     device/lge/w7/rootdir/init.class_main.sh:root/init.class_main.sh \
     device/lge/w7/rootdir/init.lge.early.rc:root/init.lge.early.rc \
     device/lge/w7/rootdir/init.lge.rc:root/init.lge.rc \
     device/lge/w7/rootdir/init.mdm.sh:root/init.mdm.sh \
     device/lge/w7/rootdir/init.usb.rc:root/init.usb.rc \
-    device/lge/w7/rootdir/init.w7ds.rc:root/init.w7ds.rc \
-    device/lge/w7/rootdir/init.w7ds.usb.rc:root/init.w7ds.usb.rc \
-    device/lge/w7/rootdir/init.w7ds_product.rc:root/init.w7ds_product.rc \
+    device/lge/w7/rootdir/init.w7.rc:root/init.w7.rc \
+    device/lge/w7/rootdir/init.w7.usb.rc:root/init.w7.usb.rc \
+    device/lge/w7/rootdir/init.w7_product.rc:root/init.w7_product.rc \
     device/lge/w7/rootdir/init.zetaw.bt_vendor.rc:root/init.zetaw.bt_vendor.rc \
     device/lge/w7/rootdir/init.zetaw.class_core.sh:root/init.zetaw.class_core.sh \
     device/lge/w7/rootdir/init.zetaw.cmm.usb.sh:root/init.zetaw.cmm.usb.sh \
@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/rootdir/init.zetaw.syspart_fixup.sh:root/init.zetaw.syspart_fixup.sh \
     device/lge/w7/rootdir/init.zetaw.usb.rc:root/init.zetaw.usb.rc \
     device/lge/w7/rootdir/init.zetaw.usb.sh:root/init.zetaw.usb.sh \
-    device/lge/w7/rootdir/ueventd.w7ds.rc:root/ueventd.w7ds.rc \
+    device/lge/w7/rootdir/ueventd.w7.rc:root/ueventd.w7.rc \
     device/lge/w7/rootdir/sbin/bbx:root/sbin/bbx \
     device/lge/w7/rootdir/fscheck.sh:root/fscheck.sh
 

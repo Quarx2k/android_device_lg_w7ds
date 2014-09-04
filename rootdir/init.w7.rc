@@ -1,6 +1,6 @@
 import /init.zetaw.rc
-import /init.w7ds.usb.rc
-import /init.w7ds_product.rc
+import /init.w7.usb.rc
+import /init.w7_product.rc
 
 on early-init
     mkdir /firmware 0771 system system
@@ -16,7 +16,7 @@ on init
     stop ril-daemon
 
 on fs
-    mount_all fstab.w7ds
+    mount_all fstab.w7
    
     # Executing tune2fs to reserve some region in /data. (40MB)
     exec /system/bin/tune2fs -u system -r 10240 /dev/block/platform/msm_sdcc.1/by-name/userdata
