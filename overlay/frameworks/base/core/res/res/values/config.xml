@@ -319,4 +319,12 @@
     <bool name="config_proximityCheckOnWake">true</bool>
     <integer name="config_proximityCheckTimeout">400</integer>
 
+    <!-- Need check this values -->
+    <integer-array name="config_smartCoverWindowCoords">
+        <item>55</item>     <!-- Top -->
+        <item>200</item>    <!-- Left -->
+        <item>850</item>    <!-- Bottom -->
+        <item>880</item>    <!-- Right -->
+    </integer-array>
+
 </resources>
