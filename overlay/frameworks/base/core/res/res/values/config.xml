@@ -44,63 +44,19 @@
         <item>0</item>
         <item>15</item>
     </integer-array>
-    <integer-array name="config_safeModeEnabledVibePattern">
-        <item>0</item>
-        <item>15</item>
-        <item>200</item>
-    </integer-array>
 
-    <!-- Vibrator pattern for feedback about booting with safe mode disabled -->
-    <integer-array name="config_scrollBarrierVibePattern">
-        <item>0</item>
-        <item>13</item>
-        <item>17</item>
-        <item>13</item>
-    </integer-array>
-
-    <!-- Vibrator pattern to be used as the default for notifications
-         that specify DEFAULT_VIBRATE.
-     -->
-    <integer-array name="config_defaultNotificationVibePattern">
-        <item>0</item>
-        <item>230</item>
-        <item>170</item>
-        <item>230</item>
-    </integer-array>
-
-    <!-- Vibrator pattern to be used as the default for notifications
-         that do not specify vibration but vibrate anyway because the device
-         is in vibrate mode.
-     -->
-    <integer-array name="config_notificationFallbackVibePattern">
-        <item>0</item>
-        <item>75</item>
-        <item>130</item>
-        <item>75</item>
-    </integer-array>
-
-    <!-- Vibrator pattern to be used as for notifications while alerts
-         are disabled (e.g. during phone calls) if enabled by the user.
-     -->
-    <integer-array name="config_notificationNoAlertsVibePattern">
-        <item>0</item>
-        <item>30</item>
-        <item>75</item>
-        <item>30</item>
-    </integer-array>
-
-    <!-- Performance profiles  	-->
+    <!-- Performance profiles  
     <string name="config_perf_profile_prop">sys.perf.profile</string>
     <string name="config_perf_profile_default_entry">1</string>
-
+	-->
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
 
-    <!-- Whether to enable auto provisioning the app for new SIM card on boot.-->
+    <!-- Whether to enable auto provisioning the app for new SIM card on boot.
     <bool name="config_auto_provision_enable">true</bool>
-
+-->
     <!-- Set to true if we need to not prefer an APN.
          This is being added to enable a simple scenario of pre-paid
          provisioning on some carriers, working around a bug (7305641)
@@ -187,17 +143,17 @@
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
 
-    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">false</bool>
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option 
+    <bool name="config_intrusiveNotificationLed">false</bool> -->
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">false</bool>
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option
+    <bool name="config_intrusiveBatteryLed">false</bool>  -->
 
-    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
-    <bool name="config_multiColorBatteryLed">false</bool>
+    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors
+    <bool name="config_multiColorBatteryLed">false</bool>  -->
 
-    <!-- Workaround for devices with broken keyboards -->
-    <bool name="config_forceDisableHardwareKeyboard">true</bool>
+    <!-- Workaround for devices with broken keyboards
+    <bool name="config_forceDisableHardwareKeyboard">true</bool> -->
 
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
     <bool name="config_batterySdCardAccessibility">true</bool>
@@ -282,8 +238,8 @@
     <!-- Our amoled doesn't animate well. -->
     <bool name="config_animateScreenLights">false</bool> 
 
-    <!-- We dont have different firmware for wifi modes, prevent reloading it -->
-    <bool name="config_wifiApFirmwareReload">false</bool>
+    <!-- We dont have different firmware for wifi modes, prevent reloading it
+    <bool name="config_wifiApFirmwareReload">false</bool>  -->
 
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
         on the headphone/microphone jack. When false use the older uevent framework. -->
@@ -304,27 +260,27 @@
             16 - App switch
             32 - Camera
         For example, a device with Home, Back and Menu keys would set this
-        config to 7. -->
+        config to 7. 
     <integer name="config_deviceHardwareKeys">1</integer>
-
-    <!-- Device supports LED flashlight -->
-    <bool name="config_enableTorch">true</bool>
+-->
+    <!-- Device supports LED flashlight 
+    <bool name="config_enableTorch">true</bool> -->
 
     <!-- Disable lockscreen translucent decor by default -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
     <!-- Enable the option to check proximity sensor when deciding whether to
          turn the screen on.
-         NOTE ! - Enable for devices that have a fast response proximity sensor -->
+         NOTE ! - Enable for devices that have a fast response proximity sensor
     <bool name="config_proximityCheckOnWake">true</bool>
     <integer name="config_proximityCheckTimeout">400</integer>
-
+ -->
     <!-- Need check this values -->
-    <integer-array name="config_smartCoverWindowCoords">
-        <item>55</item>     <!-- Top -->
-        <item>200</item>    <!-- Left -->
-        <item>850</item>    <!-- Bottom -->
-        <item>880</item>    <!-- Right -->
-    </integer-array>
+<!--     <integer-array name="config_smartCoverWindowCoords"> -->
+ <!--        <item>55</item>  -->   <!-- Top -->
+ <!--        <item>200</item> -->   <!-- Left -->
+ <!--        <item>850</item>  -->  <!-- Bottom -->
+ <!--        <item>880</item>  -->  <!-- Right -->
+ <!--    </integer-array> -->
 
 </resources>
