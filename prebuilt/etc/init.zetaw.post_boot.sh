@@ -26,6 +26,11 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+# Run model checker
+mount -o remount,rw /system
+find /system/etc/init.d -type f -exec chmod 755 {} \;
+mount -o remount,ro /system
+
 target=`getprop ro.board.platform`
 debuggable=`getprop ro.debuggable`
 case "$target" in

@@ -73,8 +73,8 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/lge/w7/prebuilt/etc/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf \
     device/lge/w7/prebuilt/usr/idc/touch_dev.idc:system/usr/idc/touch_dev.idc \
-    device/lge/w7/prebuilt/usr/keylayout/gpio-keys_d415.kl:system/usr/keylayout/gpio-keys_d415.kl \
-    device/lge/w7/prebuilt/usr/keylayout/gpio-keys_d410.kl:system/usr/keylayout/gpio-keys_d410.kl \
+    device/lge/w7/prebuilt/usr/keylayout/Generic-D4x5.kl:system/usr/keylayout/Generic-D4x5.kl \
+    device/lge/w7/prebuilt/usr/keylayout/Generic-D410.kl:system/usr/keylayout/Generic-D410.kl \
     device/lge/w7/prebuilt/etc/init.zetaw.fm.sh:system/etc/init.zetaw.fm.sh \
     device/lge/w7/prebuilt/etc/init.zetaw.ssr.wifi.sh:system/etc/init.zetaw.ssr.wifi.sh \
     device/lge/w7/prebuilt/etc/init.zetaw.wifi.sh:system/etc/init.zetaw.wifi.sh \

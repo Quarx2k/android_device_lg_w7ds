@@ -2,13 +2,11 @@
 
 model=`getprop ro.product.model`
 mount -o remount,rw /system
-rm /system/usr/keylayout/gpio-keys.kl
+rm /system/usr/keylayout/Generic.kl
 if [ "$model" = "LG-D410" ] || [ "$model" = "LG-D410hn" ]; then
-	ln -s /system/usr/keylayout/gpio-keys_d410.kl /system/usr/keylayout/gpio-keys.kl 
+	ln -s /system/usr/keylayout/Generic-D410.kl /system/usr/keylayout/Generic.kl
 else
-	ln -s /system/usr/keylayout/gpio-keys_d415.kl /system/usr/keylayout/gpio-keys.kl
+	ln -s /system/usr/keylayout/Generic-D4x5.kl /system/usr/keylayout/Generic.kl
 fi
-
 mount -o remount,ro /system
-
 
