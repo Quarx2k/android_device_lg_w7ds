@@ -81,6 +81,7 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/init.crda.sh:system/etc/init.crda.sh \
     device/lge/w7/prebuilt/etc/init.zetaw.post_boot.sh:system/etc/init.zetaw.post_boot.sh \
     device/lge/w7/prebuilt/etc/init.zetaw.bt.sh:system/etc/init.zetaw.bt.sh \
+    device/lge/w7/prebuilt/etc/init.zetaw.model.sh:system/etc/init.zetaw.model.sh \
     device/lge/w7/prebuilt/etc/sap.conf:system/etc/sap.conf \
     device/lge/w7/prebuilt/etc/gps.conf:system/etc/gps.conf \
     device/lge/w7/prebuilt/etc/msap.conf:system/etc/msap.conf \
@@ -92,9 +93,7 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/nfc-nci.conf:system/etc/nfc-nci.conf \
     device/lge/w7/prebuilt/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/lge/w7/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf \
-    device/lge/w7/prebuilt/etc/init.d/10nfc_checker:system/etc/init.d/10nfc_checker \
-    device/lge/w7/prebuilt/etc/init.d/11keys_checker:system/etc/init.d/11keys_checker
+    device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf
 
 # Ramdisk
 PRODUCT_COPY_FILES += \

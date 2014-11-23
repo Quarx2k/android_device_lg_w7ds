@@ -65,6 +65,11 @@ if [ -f /system/etc/init.zetaw.wifi.sh ]; then
   /system/bin/sh /system/etc/init.zetaw.wifi.sh "$target" "$serial"
 fi
 
+# Run model checker
+if [ -f /system/etc/init.zetaw.model.sh ]; then
+  /system/bin/sh /system/etc/init.zetaw.model.sh
+fi
+
 # Run the sensor script
 if [ -f /system/etc/init.zetaw.sensor.sh ]; then
   /system/bin/sh /system/etc/init.zetaw.sensor.sh
