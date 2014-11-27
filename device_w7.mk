@@ -377,7 +377,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
-    nfc_nci.w7 \
+    nfc_nci.pn54x.default \
     com.android.nfc_extras
 
 NFCEE_ACCESS_PATH := device/lge/w7/prebuilt/etc/nfcee_access.xml
