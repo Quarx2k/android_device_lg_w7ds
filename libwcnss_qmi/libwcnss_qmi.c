@@ -41,7 +41,7 @@ int wcnss_qmi_get_wlan_address(unsigned char *pBdAddr)
 	fd1 = open("/dev/block/platform/msm_sdcc.1/by-name/misc",O_RDONLY);
 
 	for (i = 0; i < 6; i++) {
-		lseek(fd1,0x4000+i,SEEK_SET);
+		lseek(fd1,0x3000+i,SEEK_SET);
 		lseek(fd3,0,SEEK_END);
 		read(fd1,&pBdAddr[i],1);
 	}
