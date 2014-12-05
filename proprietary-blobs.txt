@@ -121,6 +121,13 @@ vendor/lib/libC2D2.so
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/libwvm.so
 
+# Bluetooth
+bin/bdaddr_loader
+bin/btnvtool
+bin/hci_qcomm_init
+lib/libatd_corelib.so
+lib/libbtnv.so
+lib/liblgftmitem.so
 
 # Camera
 bin/mm-qcamera-daemon

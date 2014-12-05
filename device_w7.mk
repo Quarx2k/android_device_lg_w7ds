@@ -79,6 +79,7 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/init.zetaw.wifi.sh:system/etc/init.zetaw.wifi.sh \
     device/lge/w7/prebuilt/etc/init.crda.sh:system/etc/init.crda.sh \
     device/lge/w7/prebuilt/etc/init.zetaw.post_boot.sh:system/etc/init.zetaw.post_boot.sh \
+    device/lge/w7/prebuilt/etc/init.zetaw.bt.sh:system/etc/init.zetaw.bt.sh \
     device/lge/w7/prebuilt/etc/sap.conf:system/etc/sap.conf \
     device/lge/w7/prebuilt/etc/gps.conf:system/etc/gps.conf \
     device/lge/w7/prebuilt/etc/msap.conf:system/etc/msap.conf \
