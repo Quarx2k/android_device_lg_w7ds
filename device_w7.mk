@@ -98,7 +98,6 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/lge/w7/rootdir/fstab.w7:root/fstab.w7 \
-    device/lge/w7/rootdir/fstab_f2fs.w7:root/fstab_f2fs.w7 \
     device/lge/w7/rootdir/init.class_main.sh:root/init.class_main.sh \
     device/lge/w7/rootdir/init.lge.early.rc:root/init.lge.early.rc \
     device/lge/w7/rootdir/init.lge.rc:root/init.lge.rc \
@@ -119,9 +118,7 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/rootdir/init.zetaw.syspart_fixup.sh:root/init.zetaw.syspart_fixup.sh \
     device/lge/w7/rootdir/init.zetaw.usb.rc:root/init.zetaw.usb.rc \
     device/lge/w7/rootdir/init.zetaw.usb.sh:root/init.zetaw.usb.sh \
-    device/lge/w7/rootdir/ueventd.w7.rc:root/ueventd.w7.rc \
-    device/lge/w7/rootdir/sbin/bbx:root/sbin/bbx \
-    device/lge/w7/rootdir/fscheck.sh:root/fscheck.sh
+    device/lge/w7/rootdir/ueventd.w7.rc:root/ueventd.w7.rc
 
 # TWRP
 PRODUCT_COPY_FILES += \
