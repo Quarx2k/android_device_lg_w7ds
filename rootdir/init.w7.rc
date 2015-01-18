@@ -106,6 +106,13 @@ service audiod /system/bin/audiod
    user system
    group system
 
+service charger /sbin/charger_w7
+    class charger
+    critical
+
+on charger
+   class_start charger
+
 on boot
 
     chown system system /sys/class/power_supply/battery/pseudo_batt
