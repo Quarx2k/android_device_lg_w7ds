@@ -62,12 +62,12 @@ case "$baseband" in
     if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
         stop ril-daemon
         start mmi-ril-daemon
-        start ril-daemon1
+        start ril-daemon2
     elif [ "$multisim" = "tsts" ]; then
         stop ril-daemon
         start mmi-ril-daemon
-        start ril-daemon1
         start ril-daemon2
+        start ril-daemon3
     fi
 
     case "$netmgr" in

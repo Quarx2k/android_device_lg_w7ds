@@ -54,13 +54,15 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
+TARGET_OTA_ASSERT_DEVICE := w7,w7ds
+
 # Offmode Charging
 COMMON_GLOBAL_CFLAGS += \
     -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' \
     -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
 
 # Enable dex-preoptimization to speed up first boot sequence
-WITH_DEXPREOPT := true
+WITH_DEXPREOPT := false
 
 # Global flags
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DLG_CAMERA_HARDWARE

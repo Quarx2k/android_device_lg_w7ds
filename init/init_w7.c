@@ -103,7 +103,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         }
         property_set("ro.build.description", "w7_global_com-user 4.4.2 KOT49I.A1402966338 1402966338 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_global_com/w7:4.4.2/KOT49I.A1402966338/1402966338:user/release-keys");
-        property_set("ro.telephony.ril_class", "LgeW7RIL");
         property_set("persist.radio.multisim.config", "");
     } else if (strncmp(serial, "LGD415", 6) == 0) {
         /* D415 */
@@ -111,7 +110,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.product.device", "w7");
         property_set("ro.build.description", "w7_tmo_us-user 4.4.2 KOT49I.D41510c D41510c.1393916607 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_tmo_us/w7:4.4.2/KOT49I.D41510c/D41510c.1393916607:user/release-keys");
-        property_set("ro.telephony.ril_class", "LgeW7RIL");
         property_set("persist.radio.multisim.config", "");
     } else {
         /* XXX */
