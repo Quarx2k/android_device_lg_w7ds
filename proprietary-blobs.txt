@@ -93,7 +93,6 @@ lib/libvss_nv_idl.so
 lib/libvss_common_core.so
 lib/libvss_nv_core.so
 lib/libril.so
-lib/libbinder.so
 bin/qmuxd
 bin/rild
 bin/rmt_storage
