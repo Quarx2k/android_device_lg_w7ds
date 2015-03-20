@@ -1,0 +1,4 @@
+allow platform_app time_daemon:unix_stream_socket connectto;
+allow platform_app unlabeled:dir search;
+allow platform_app init:unix_stream_socket connectto;
+

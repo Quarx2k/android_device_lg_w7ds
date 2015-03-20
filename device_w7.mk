@@ -48,15 +48,16 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    device/lge/w7/prebuilt/etc/permissions/com.qualcomm.location.xml:system/etc/permissions/com.qualcomm.location.xml
+    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 # Configs
 PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     device/lge/w7/prebuilt/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/lge/w7/prebuilt/etc/permissions/com.qualcomm.location.xml:system/etc/permissions/com.qualcomm.location.xml \
     device/lge/w7/prebuilt/etc/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     device/lge/w7/prebuilt/etc/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
     device/lge/w7/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
@@ -64,10 +65,6 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
     device/lge/w7/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
     device/lge/w7/prebuilt/etc/audio_effects.conf:system/etc/audio_effects.conf \
-    frameworks/av/media/libstagefright/data/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     device/lge/w7/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
     device/lge/w7/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
     device/lge/w7/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
@@ -75,49 +72,29 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/usr/idc/touch_dev.idc:system/usr/idc/touch_dev.idc \
     device/lge/w7/prebuilt/usr/keylayout/Generic-D4x5.kl:system/usr/keylayout/Generic-D4x5.kl \
     device/lge/w7/prebuilt/usr/keylayout/Generic-D410.kl:system/usr/keylayout/Generic-D410.kl \
-    device/lge/w7/prebuilt/etc/init.zetaw.fm.sh:system/etc/init.zetaw.fm.sh \
-    device/lge/w7/prebuilt/etc/init.zetaw.ssr.wifi.sh:system/etc/init.zetaw.ssr.wifi.sh \
-    device/lge/w7/prebuilt/etc/init.zetaw.wifi.sh:system/etc/init.zetaw.wifi.sh \
-    device/lge/w7/prebuilt/etc/init.crda.sh:system/etc/init.crda.sh \
-    device/lge/w7/prebuilt/etc/init.zetaw.post_boot.sh:system/etc/init.zetaw.post_boot.sh \
     device/lge/w7/prebuilt/etc/init.zetaw.bt.sh:system/etc/init.zetaw.bt.sh \
-    device/lge/w7/prebuilt/etc/init.zetaw.model.sh:system/etc/init.zetaw.model.sh \
+    device/lge/w7/prebuilt/etc/init.d/090fixup:system/etc/init.d/090fixup \
     device/lge/w7/prebuilt/etc/sap.conf:system/etc/sap.conf \
     device/lge/w7/prebuilt/etc/gps.conf:system/etc/gps.conf \
     device/lge/w7/prebuilt/etc/msap.conf:system/etc/msap.conf \
     device/lge/w7/prebuilt/etc/clatd.conf:system/etc/clatd.conf \
     device/lge/w7/prebuilt/etc/sec_config:system/etc/sec_config \
     device/lge/w7/prebuilt/etc/izat.conf:system/etc/izat.conf \
-    device/lge/w7/prebuilt/etc/boot_fixup:system/etc/boot_fixup \
     device/lge/w7/prebuilt/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/lge/w7/prebuilt/etc/nfc-nci.conf:system/etc/nfc-nci.conf \
     device/lge/w7/prebuilt/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/lge/w7/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf
+    device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf  \
+    kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/lge/w7/rootdir/fstab.w7:root/fstab.w7 \
-    device/lge/w7/rootdir/init.class_main.sh:root/init.class_main.sh \
-    device/lge/w7/rootdir/init.lge.early.rc:root/init.lge.early.rc \
-    device/lge/w7/rootdir/init.lge.rc:root/init.lge.rc \
-    device/lge/w7/rootdir/init.mdm.sh:root/init.mdm.sh \
-    device/lge/w7/rootdir/init.usb.rc:root/init.usb.rc \
+    device/lge/w7/rootdir/init.w7.rc:root/init.w7.rc \
     device/lge/w7/rootdir/init.w7.rc:root/init.w7.rc \
     device/lge/w7/rootdir/init.w7.usb.rc:root/init.w7.usb.rc \
-    device/lge/w7/rootdir/init.w7_product.rc:root/init.w7_product.rc \
-    device/lge/w7/rootdir/init.zetaw.bt_vendor.rc:root/init.zetaw.bt_vendor.rc \
-    device/lge/w7/rootdir/init.zetaw.class_core.sh:root/init.zetaw.class_core.sh \
-    device/lge/w7/rootdir/init.zetaw.cmm.usb.sh:root/init.zetaw.cmm.usb.sh \
-    device/lge/w7/rootdir/init.zetaw.early_boot.sh:root/init.zetaw.early_boot.sh \
-    device/lge/w7/rootdir/init.zetaw.factory.sh:root/init.zetaw.factory.sh \
-    device/lge/w7/rootdir/init.zetaw.rc:root/init.zetaw.rc \
-    device/lge/w7/rootdir/init.zetaw.ril.sh:root/init.zetaw.ril.sh \
-    device/lge/w7/rootdir/init.zetaw.sh:root/init.zetaw.sh \
-    device/lge/w7/rootdir/init.zetaw.ssr.sh:root/init.zetaw.ssr.sh \
-    device/lge/w7/rootdir/init.zetaw.syspart_fixup.sh:root/init.zetaw.syspart_fixup.sh \
-    device/lge/w7/rootdir/init.zetaw.usb.rc:root/init.zetaw.usb.rc \
-    device/lge/w7/rootdir/init.zetaw.usb.sh:root/init.zetaw.usb.sh \
     device/lge/w7/rootdir/ueventd.w7.rc:root/ueventd.w7.rc
 
 # TWRP
@@ -162,7 +139,8 @@ PRODUCT_PACKAGES += \
     libbson \
     libcurl \
     tcpdump \
-    Torch
+    Torch \
+    libxml2
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -182,15 +160,6 @@ PRODUCT_PACKAGES += \
 # Qcom SoftAP
 PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    HoloSpiralWallpaper \
-    VisualizationWallpapers \
-    librs_jni
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -299,75 +268,54 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf \
     libnetcmdiface
 
-# QCOM
-PRODUCT_PROPERTY_OVERRIDES += \
-    com.qc.hardware=true
-
-# Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.fluence.mode=endfire \
-    persist.audio.vr.enable=false \
-    persist.audio.handset.mic=digital \
-    ro.qc.sdk.audio.ssr=false
-
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bt.le_dev_pwr_class=1 \
     ro.bluetooth.hfp.ver=1.6 \
-    ro.qualcomm.bluetooth.sap=true \
-    ro.qualcomm.bt.hci_transport=smd \
-    ro.bluetooth.request.master=true \
-    ro.bluetooth.remote.autoconnect=true
-
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    lpa.decode=true \
-    qcom.hw.aac.encoder=true \
-    af.resampler.quality=255 \
-    persist.audio.lowlatency.rec=false \
-    persist.sys.media.use-awesome=true
+    ro.qualcomm.bt.hci_transport=smd
 
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.qc.sub.rstrtlvl=3 \
     persist.sys.qc.sub.rdump.on=1 \
-    persist.sys.qc.sub.rdump.max=20 \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15
 
-# Media
+# Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.enable-player=true \
-    media.stagefright.enable-http=true \
-    media.stagefright.enable-aac=true \
-    media.stagefright.enable-qcp=true \
-    media.stagefright.enable-fma2dp=true \
-    media.stagefright.enable-scan=true \
-    mmp.enable.3g2=true \
-    ro.audio.fm_max_volume=4096 \
-    ro.qualcomm.cabl=0 \
-    use.voice.path.for.pcm.voip=true \
-    qcom.bt.le_dev_pwr_class=1 \
-    ro.qc.sdk.audio.ssr=false \
-    persist.audio.fluence.voicecall=false \
-    persist.audio.fluence.voicerec=false \
-    ro.qc.sdk.audio.fluencetype=none \
-    persist.audio.fluence.speaker=false \
-    use.voice.path.for.pcm.voip=true \
-    use.dedicated.device.for.voip=true \
+    audio.offload.24bit.enable=false \
     audio.offload.buffer.size.kb=32 \
     audio.offload.gapless.enabled=false \
+    audio.offload.multiple.enabled=false \
+    audio.offload.pcm.16bit.enable=true \
+    audio.offload.pcm.24bit.enable=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=false \
-    av.streaming.offload.enable=false \
-    audio.offload.pcm.enable=false \
-    mm.enable.smoothstreaming=true \
-    qcom.hw.aac.encoder=true \
-    persist.audio.calfile0=/etc/ACDB/Bluetooth_cal.acdb \
-    persist.audio.calfile1=/etc/ACDB/General_cal.acdb \
-    persist.audio.calfile2=/etc/ACDB/Global_cal.acdb \
-    persist.audio.calfile3=/etc/ACDB/Handset_cal.acdb \
-    persist.audio.calfile4=/etc/ACDB/Hdmi_cal.acdb \
-    persist.audio.calfile5=/etc/ACDB/Headset_cal.acdb \
-    persist.audio.calfile6=/etc/ACDB/Speaker_cal.acdb
+    av.streaming.offload.enable=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    mm.enable.smoothstreaming=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.audio.calfile0=/etc/Bluetooth_cal.acdb \
+    persist.audio.calfile1=/etc/General_cal.acdb \
+    persist.audio.calfile2=/etc/Global_cal.acdb \
+    persist.audio.calfile3=/etc/Handset_cal.acdb \
+    persist.audio.calfile4=/etc/Hdmi_cal.acdb \
+    persist.audio.calfile5=/etc/Headset_cal.acdb \
+    persist.audio.calfile6=/etc/Speaker_cal.acdb
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
+    persist.audio.fluence.speaker=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qc.sdk.audio.fluencetype=endfire \
+    ro.qc.sdk.audio.ssr=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    use.voice.path.for.pcm.voip=true
 
 # Radio and Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -378,6 +326,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.vc_call_vol_steps=7 \
     ro.modem.no_wdog_chk=1 \
     persist.call_recording.enabled=1
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp
 
 # NFC packages
 PRODUCT_PACKAGES += \
@@ -396,12 +347,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ksm.default=1
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
-PRODUCT_LOCALES := en_US
-PRODUCT_LOCALES += hdpi
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+# Screen density
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 $(call inherit-product, vendor/lge/w7/w7-vendor.mk)
 

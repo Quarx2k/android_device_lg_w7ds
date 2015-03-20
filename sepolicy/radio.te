@@ -1,0 +1,7 @@
+allow radio lge_touch_sysfs:file rw_file_perms;
+allow radio unlabeled:dir search;
+allow radio unlabeled:dir getattr;
+allow radio unlabeled:file { read write getattr };
+allow radio unlabeled:file open;
+allow radio baseband_prop:property_service set;
+
