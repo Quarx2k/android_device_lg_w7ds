@@ -5,3 +5,11 @@ allow sensors self:capability sys_nice;
 allow sensors unlabeled:dir search;
 allow sensors unlabeled:dir { read getattr open };
 allow sensors unlabeled:file { read write getattr open };
+allow sensors apk_data_file:dir write;
+allow sensors apk_data_file:dir add_name;
+allow sensors apk_data_file:dir remove_name;
+allow sensors apk_data_file:sock_file setattr;
+allow sensors apk_data_file:sock_file unlink;
+allow sensors apk_data_file:sock_file write;
+allow sensors apk_data_file:sock_file create;
+

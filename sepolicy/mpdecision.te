@@ -2,3 +2,10 @@ allow mpdecision socket_device:dir {add_name write};
 allow mpdecision socket_device:sock_file { write create setattr };
 allow mpdecision thermal_socket:sock_file write;
 allow mpdecision thermal-engine:unix_stream_socket connectto;
+allow mpdecision system_data_file:dir write;
+allow mpdecision system_data_file:dir add_name;
+allow mpdecision system_data_file:file create;
+allow mpdecision system_data_file:file { open append };
+
+
+
