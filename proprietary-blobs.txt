@@ -74,6 +74,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libqdi.so
+vendor/lib/libqti-perfd-client.so
 vendor/lib/libnetmgr.so
 vendor/lib/libdsnetutils.so
 vendor/lib/libsmemlog.so

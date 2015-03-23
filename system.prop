@@ -4,8 +4,10 @@
 ############################################################ CLEANUP ME PLEASE QUARX ###########################################################
 
 # Use reference RIL for initial bringup
+ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
+
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
 persist.rild.nitz_long_ons_1=
@@ -32,8 +34,6 @@ ro.telephony.call_ring.delay=0
 
 persist.radio.adb_log_on=1
 persist.radio.qcril_am_enabled=1
-wlan.chip.vendor=qcom
-wlan.chip.version=wcn
 drm.service.enabled=true
 persist.lg.data.autoprof.msim=true
 persist.cne.feature=1
