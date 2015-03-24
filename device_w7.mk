@@ -72,7 +72,6 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/usr/keylayout/Generic-D4x5.kl:system/usr/keylayout/Generic-D4x5.kl \
     device/lge/w7/prebuilt/usr/keylayout/Generic-D410.kl:system/usr/keylayout/Generic-D410.kl \
     device/lge/w7/prebuilt/etc/init.zetaw.bt.sh:system/etc/init.zetaw.bt.sh \
-    device/lge/w7/prebuilt/fixup.sh:system/bin/fixup.sh \
     device/lge/w7/prebuilt/etc/msap.conf:system/etc/msap.conf \
     device/lge/w7/prebuilt/etc/clatd.conf:system/etc/clatd.conf \
     device/lge/w7/prebuilt/etc/sec_config:system/etc/sec_config \
@@ -91,6 +90,10 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/rootdir/init.w7.rc:root/init.w7.rc \
     device/lge/w7/rootdir/init.w7.usb.rc:root/init.w7.usb.rc \
     device/lge/w7/rootdir/ueventd.w7.rc:root/ueventd.w7.rc
+
+# OTA
+PRODUCT_COPY_FILES += \
+    device/lge/w7/prebuilt/fixup.sh:fixup.sh
 
 # TWRP
 PRODUCT_COPY_FILES += \
