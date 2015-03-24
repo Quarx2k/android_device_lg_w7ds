@@ -1,10 +1,6 @@
 #
 # system.prop for w7
 #
-############################################################ CLEANUP ME PLEASE QUARX ###########################################################
-# We need it for unified build
-persist.sys.root_access=3
-
 # Use reference RIL for initial bringup
 ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so

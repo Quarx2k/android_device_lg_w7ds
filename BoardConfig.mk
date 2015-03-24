@@ -26,6 +26,9 @@ TARGET_NO_BOOTLOADER := true
 
 TARGET_SPECIFIC_HEADER_PATH += device/lge/w7/include
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/w7
+
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
