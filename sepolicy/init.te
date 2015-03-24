@@ -3,4 +3,6 @@ allow init fuse:dir search;
 allow init self:capability sys_module;
 allow init fuse:dir mounton;
 allow init self:process execmem;
+allow init labeledfs:filesystem remount;
+allow init su_exec:file execute_no_trans;
 

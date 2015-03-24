@@ -188,6 +188,8 @@ on fs
     mkdir /firmware 0771 system system
     mount vfat /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
 
+    start fixup
+
 on charger
    class_start charger
 
@@ -301,6 +303,12 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
+
+service fixup /system/bin/fixup.sh
+    class core
+    user root
+    disabled
+    oneshot
 
 service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
     class late_start

@@ -57,7 +57,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     device/lge/w7/prebuilt/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    device/lge/w7/prebuilt/etc/permissions/com.qualcomm.location.xml:system/etc/permissions/com.qualcomm.location.xml \
     device/lge/w7/prebuilt/etc/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     device/lge/w7/prebuilt/etc/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
     device/lge/w7/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
@@ -73,18 +72,14 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/usr/keylayout/Generic-D4x5.kl:system/usr/keylayout/Generic-D4x5.kl \
     device/lge/w7/prebuilt/usr/keylayout/Generic-D410.kl:system/usr/keylayout/Generic-D410.kl \
     device/lge/w7/prebuilt/etc/init.zetaw.bt.sh:system/etc/init.zetaw.bt.sh \
-    device/lge/w7/prebuilt/etc/init.d/090fixup:system/etc/init.d/090fixup \
-    device/lge/w7/prebuilt/etc/sap.conf:system/etc/sap.conf \
-    device/lge/w7/prebuilt/etc/gps.conf:system/etc/gps.conf \
+    device/lge/w7/prebuilt/fixup.sh:system/bin/fixup.sh \
     device/lge/w7/prebuilt/etc/msap.conf:system/etc/msap.conf \
     device/lge/w7/prebuilt/etc/clatd.conf:system/etc/clatd.conf \
     device/lge/w7/prebuilt/etc/sec_config:system/etc/sec_config \
-    device/lge/w7/prebuilt/etc/izat.conf:system/etc/izat.conf \
     device/lge/w7/prebuilt/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/lge/w7/prebuilt/etc/nfc-nci.conf:system/etc/nfc-nci.conf \
     device/lge/w7/prebuilt/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/lge/w7/prebuilt/etc/nfcee_access.xml:system/etc/nfcee_access.xml \
-    device/lge/w7/prebuilt/etc/quipc.conf:system/etc/quipc.conf  \
     kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
     kernel/lge/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
@@ -170,6 +165,17 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     libwcnss_qmi \
+
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8226
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/gps/quipc.conf:system/etc/quipc.conf \
+    $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 # Charger
 PRODUCT_PACKAGES += charger charger_res_images

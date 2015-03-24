@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
 model=`getprop ro.product.model`
-
+su -c "setenforce 0"
 mount -o remount,rw /system
 rm /system/usr/keylayout/Generic.kl
 
@@ -25,3 +25,4 @@ if [ "$model" = "LG-D415" ]; then
 fi
 
 mount -o remount,ro /system
+su -c "setenforce 1"

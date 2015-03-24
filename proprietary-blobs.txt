@@ -1,8 +1,5 @@
 # Time services
-app/TimeService.apk
 bin/time_daemon
-vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so
 
 # Keystore
 vendor/firmware/keymaster/keymaster.b00
@@ -228,19 +225,21 @@ bin/thermal-engine
 vendor/lib/libthermalioctl.so
 vendor/lib/libthermalclient.so
 
-# Gps
-lib/hw/gps.default.so
-lib/libloc_core.so
-lib/libloc_eng.so
+# GPS
+etc/permissions/com.qualcomm.location.xml
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
-lib/libgps.utils.so
-vendor/lib/libquipc_os_api.so
-vendor/lib/liblocationservice.so
-vendor/lib/libulp2.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
+vendor/lib/liblocationservice.so
+vendor/lib/liblowi_client.so
+vendor/lib/libquipc_os_api.so
+vendor/lib/libquipc_os_api.so
+vendor/lib/libquipc_ulp_adapter.so
+vendor/lib/libulp2.so
+vendor/lib/libalarmservice_jni.so
+
 
 # Sensors
 vendor/lib/hw/sensors.msm8226.so
