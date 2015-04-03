@@ -66,7 +66,6 @@ int check_cmdline(char param[]) {
     return 0;
 }
 
- 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
     char serial[PROP_VALUE_MAX];
@@ -88,8 +87,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
                 property_set("ro.product.device", "w7ds");
                 property_set("ro.product.model", "LG-D410");
         }
-        property_set("ro.build.description", "w7ds_global_com-user 4.4.2 KOT49I.A1398228431 1398228431 release-keys");
-        property_set("ro.build.fingerprint", "lge/w7ds_global_com/w7ds:4.4.2/KOT49I.A1398228431/1398228431:user/release-keys");
+        property_set("ro.build.description", "w7ds_global_com-user 5.0.2 LRX22G.A1423481010 15040202274a7 release-keys");
+        property_set("ro.build.fingerprint", "lge/w7ds_global_com/w7ds:5.0.2/LRX22G.A1423481010/15040202274a7:user/release-keys");
         property_set("persist.radio.multisim.config", "dsds");
     } else if (strncmp(serial, "LGD405", 6) == 0) {
         /* D405, D405n */
@@ -101,15 +100,15 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
                 property_set("ro.product.model", "LG-D405");
                 property_set("ro.product.device", "w7");
         }
-        property_set("ro.build.description", "w7_global_com-user 4.4.2 KOT49I.A1402966338 1402966338 release-keys");
-        property_set("ro.build.fingerprint", "lge/w7_global_com/w7:4.4.2/KOT49I.A1402966338/1402966338:user/release-keys");
+        property_set("ro.build.description", "w7_global_com-user 5.0.2 LRX22G.A1423481010 15040202274a7 release-keys");
+        property_set("ro.build.fingerprint", "lge/w7_global_com/w7ds:5.0.2/LRX22G.A1423481010/15040202274a7:user/release-keys");
         property_set("persist.radio.multisim.config", "");
     } else if (strncmp(serial, "LGD415", 6) == 0) {
         /* D415 */
         property_set("ro.product.model", "LG-D415");
         property_set("ro.product.device", "w7");
-        property_set("ro.build.description", "w7_tmo_us-user 4.4.2 KOT49I.D41510c D41510c.1393916607 release-keys");
-        property_set("ro.build.fingerprint", "lge/w7_tmo_us/w7:4.4.2/KOT49I.D41510c/D41510c.1393916607:user/release-keys");
+        property_set("ro.build.description", "w7_global_com-user 5.0.2 LRX22G.A1423481010 15040202274a7 release-keys");
+        property_set("ro.build.fingerprint", "lge/w7_global_com/w7ds:5.0.2/LRX22G.A1423481010/15040202274a7:user/release-keys");
         property_set("persist.radio.multisim.config", "");
     } else {
         /* XXX */

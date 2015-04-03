@@ -45,10 +45,6 @@
         <item>15</item>
     </integer-array>
 
-    <!-- Performance profiles -->
-    <string name="config_perf_profile_prop">sys.perf.profile</string>
-    <string name="config_perf_profile_default_entry">1</string>
-
     <!-- Whether to enable auto provisioning the app for new SIM card on boot.
     <bool name="config_auto_provision_enable">true</bool>
 -->

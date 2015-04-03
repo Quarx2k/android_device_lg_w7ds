@@ -50,7 +50,8 @@ on init
 
     # NFC fix
     symlink /dev/pn547 /dev/pn544
-    # CM: We use our own ril-daemon service definition, see mmi-ril-daemon
+
+    # We use our own ril-daemon service definition, see mmi-ril-daemon
     stop ril-daemon
 
 on post-fs
@@ -95,6 +96,15 @@ on boot
     chmod 2770 /dev/socket/qmux_bluetooth
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
+
+    # Subsytem Restart
+    #adsp
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
+    #modem
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level "related"
+    #venus
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
 
     #Create directory used by sensor subsystem(dsps)
     mkdir /data/system/sensors
@@ -458,6 +468,7 @@ service irrcServer /system/bin/irrcServer
    user media
    group media
    onrestart restart irrcServer
+   disabled
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
@@ -512,32 +523,6 @@ service config_bluetooth /system/bin/sh /system/etc/init.zetaw.bt.sh "onboot"
     user root
     oneshot
 
- Powersave
-on property:sys.perf.profile=0
-    start mpdecision
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
-    write /sys/class/devfreq/fdb00000.qcom,kgsl-3d0/governor powersave
-    write /sys/class/devfreq/qcom,cpubw.63/governor powersave
-
-# Balanced
-on property:sys.perf.profile=1
-    start mpdecision
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-    write /sys/class/devfreq/fdb00000.qcom,kgsl-3d0/governor msm-adreno-tz
-    write /sys/class/devfreq/qcom,cpubw.63/governor msm_cpufreq
-
-# High performance
-on property:sys.perf.profile=2
-    stop mpdecision
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
-    write /sys/class/devfreq/fdb00000.qcom,kgsl-3d0/governor performance
-    write /sys/class/devfreq/qcom,cpubw.63/governor performance
-
-# CM Performance Profiles
 on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/scheduler row
     write /sys/module/lpm_levels/enable_low_power/l2 4
