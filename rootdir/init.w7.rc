@@ -189,7 +189,12 @@ on fs
     mkdir /dev/bus 0755 root root
     mkdir /dev/bus/usb 0755 root root
 
+    # mount fs
     mount_all fstab.w7
+
+    # activate zram
+    swapon_all fstab.qcom
+    write /proc/sys/vm/page-cluster 0
 
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
