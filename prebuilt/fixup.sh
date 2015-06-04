@@ -1,6 +1,7 @@
 #!/sbin/sh
 
-model=`getprop ro.product.model`
+model=`cat /proc/cmdline | sed 's/.*model.name=\([^ ]*\).*/\1/'`
+
 rm /system/usr/keylayout/Generic.kl
 
 if [ "$model" = "LG-D410" ] || [ "$model" = "LG-D410hn" ]; then
