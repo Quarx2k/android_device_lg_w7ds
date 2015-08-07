@@ -4,4 +4,6 @@ allow ueventd kcal_dev:lnk_file r_file_perms;
 allow ueventd vibe_dev:file { getattr relabelto };
 allow ueventd vfat:dir search;
 allow ueventd vfat:file { read getattr open };
+allow ueventd unlabeled:lnk_file { read getattr open write };
+allow ueventd unlabeled:file { read getattr open write };
 
