@@ -313,6 +313,9 @@ vendor/lib/libsensor_reg.so
 bin/sensors.qcom
 lib/hw/lights.msm8226.so
 vendor/lib/libbmc050.so
+vendor/lib/libsensor_test.so
+vendor/lib/libsensor_thresh.so
+vendor/lib/libsensor_user_cal.so
 
 # Perf
 bin/mpdecision
