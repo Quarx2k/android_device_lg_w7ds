@@ -87,6 +87,9 @@ USE_OPENGL_RENDERER := true
 # Hardware tunables framework
 BOARD_HARDWARE_CLASS := device/lge/w7/cmhw/
 
+# RIL
+BOARD_RIL_CLASS := ../../../device/lge/w7/ril/
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/w7/bluetooth
 BOARD_HAVE_BLUETOOTH := true

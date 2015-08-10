@@ -335,7 +335,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.call_type=1 \
     ro.config.vc_call_vol_steps=7 \
     ro.modem.no_wdog_chk=1 \
-    persist.call_recording.enabled=1
+    persist.call_recording.enabled=1 \
+    ro.telephony.ril_class=LgeRIL
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb
