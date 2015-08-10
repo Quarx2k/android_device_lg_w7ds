@@ -26,7 +26,12 @@
 #
 
 on init
+    write /sys/class/android_usb/android0/f_rndis/manufacturer LGE
+    write /sys/class/android_usb/android0/f_rndis/vendorID 1004
     write /sys/class/android_usb/android0/f_rndis/wceis 1
+    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
+    write /sys/module/g_android/parameters/rndis_dl_max_pkt_per_xfer 10
+    write /sys/module/g_android/parameters/rndis_ul_max_pkt_per_xfer 5
 
 on fs
     mkdir /dev/usb-ffs 0770 shell shell
