@@ -224,10 +224,6 @@ PRODUCT_PACKAGES += \
     fibmap.f2fs \
     wcnss_service
 
-# EGL config
-PRODUCT_COPY_FILES += \
-    device/lge/w7/prebuilt/egl.cfg:system/lib/egl/egl.cfg
-
 # Opengles version 3
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
