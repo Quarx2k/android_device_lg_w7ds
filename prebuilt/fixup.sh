@@ -11,14 +11,14 @@ else
 fi
 
 if [ "$model" = "LG-D410" ] || [ "$model" = "LG-D405" ] || [ "$model" = "LG-D415" ]; then
-	rm /system/etc/permissions/android.hardware.nfc.xml
-	rm /system/etc/permissions/android.hardware.nfc.hce.xml
-	rm /system/lib/hw/nfc_nci.pn54x.default.so
-	rm -rf /system/app/NfcNci
+	chmod 000 /system/etc/permissions/android.hardware.nfc.xml
+	chmod 000 /system/etc/permissions/android.hardware.nfc.hce.xml
+	chmod 000 /system/lib/hw/nfc_nci.pn54x.default.so
+	chmod 000 /system/app/NfcNci/NfcNci.apk
 fi
 
 if [ "$model" = "LG-D415" ]; then
-	rm /system/bin/fm_qsoc_patches
-	rm /system/etc/permissions/qcom.fmradio.xml
-	rm -rf /system/app/FM2
+	chmod 000/system/bin/fm_qsoc_patches
+	chmod 000 /system/etc/permissions/qcom.fmradio.xml
+	chmod 000 /system/app/FM2/FM2.apk
 fi
