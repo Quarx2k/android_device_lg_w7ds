@@ -18,7 +18,7 @@ if [ "$model" = "LG-D410" ] || [ "$model" = "LG-D405" ] || [ "$model" = "LG-D415
 fi
 
 if [ "$model" = "LG-D415" ]; then
-	chmod 000/system/bin/fm_qsoc_patches
+	chmod 000 /system/bin/fm_qsoc_patches
 	chmod 000 /system/etc/permissions/qcom.fmradio.xml
 	chmod 000 /system/app/FM2/FM2.apk
 fi
