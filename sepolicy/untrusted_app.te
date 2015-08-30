@@ -17,6 +17,8 @@ allow untrusted_app unlabeled:file { read write getattr };
 allow untrusted_app unlabeled:dir read;
 allow untrusted_app unlabeled:file open;
 allow untrusted_app unlabeled:file lock;
+allow untrusted_app proc_dirty_ratio:file getattr;
+allow untrusted_app proc_security:file getattr;
 
 # test apps needs to communicate with imscm
 # using binder call

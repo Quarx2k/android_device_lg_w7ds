@@ -90,7 +90,8 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/rootdir/init.w7.rc:root/init.w7.rc \
     device/lge/w7/rootdir/init.w7.rc:root/init.w7.rc \
     device/lge/w7/rootdir/init.w7.usb.rc:root/init.w7.usb.rc \
-    device/lge/w7/rootdir/ueventd.w7.rc:root/ueventd.w7.rc
+    device/lge/w7/rootdir/ueventd.w7.rc:root/ueventd.w7.rc \
+    device/lge/w7/rootdir/init.baseband.sh:root/init.baseband.sh
 
 # OTA
 PRODUCT_COPY_FILES += \

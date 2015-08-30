@@ -309,6 +309,11 @@ service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /s
     class late_start
     disabled
 
+service lg-baseband /system/bin/sh /init.baseband.sh
+    class late_start
+    user root
+    oneshot
+
 service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root

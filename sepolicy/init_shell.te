@@ -7,4 +7,6 @@ allow init_shell self:udp_socket create;
 allow init_shell self:rawip_socket create;
 allow init_shell self:rawip_socket getopt;
 allow init_shell self:rawip_socket setopt;
-
+allow init_shell vfat:dir search;
+allow init_shell vfat:file read;
+allow init_shell vfat:file open;
