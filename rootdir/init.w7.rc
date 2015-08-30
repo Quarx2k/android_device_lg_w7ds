@@ -27,17 +27,15 @@
  
 import init.w7.usb.rc
 on init
-    mkdir /storage 0751 system sdcard_r
-    mkdir /storage/sdcard1 0700 root root
-    mkdir /mnt/media_rw 0700 media_rw media_rw
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
+    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+    mkdir /storage/sdcard1 0775 system system
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdisk
+    export SECONDARY_STORAGE /storage/sdcard1
 
     # for backwards compatibility
     symlink /storage/emulated/legacy /sdcard
