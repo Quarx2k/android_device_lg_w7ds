@@ -47,7 +47,7 @@ vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbloader.so
-bin/fm_qsoc_patches
+#bin/fm_qsoc_patches
 
 # Listen service
 vendor/lib/liblistenhardware.so
@@ -77,11 +77,11 @@ vendor/lib/libdsnetutils.so
 vendor/lib/libsmemlog.so
 vendor/lib/libqdp.so
 vendor/lib/libcneapiclient.so
-vendor/lib/libperipheral_client.so
+-vendor/lib/libperipheral_client.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
 lib/libuicc.so
-lib/libmdmdetect.so
+-lib/libmdmdetect.so
 lib/libcnefeatureconfig.so
 lib/libvss_common_iface.so
 lib/libvss_common_idl.so
@@ -122,7 +122,9 @@ vendor/lib/libscale.so
 vendor/lib/libc2d30.so
 
 # Media
-vendor/lib/libWVStreamControlAPI_L3.so
+vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/libwvdrm_L1.so
+vendor/lib/libWVphoneAPI.so
 vendor/lib/libwvm.so
 
 # Bluetooth
@@ -293,20 +295,12 @@ vendor/lib/libthermalioctl.so
 vendor/lib/libthermalclient.so
 
 # GPS
-etc/permissions/com.qualcomm.location.xml
-lib/libloc_api_v02.so
-lib/libloc_ds_api.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
-vendor/lib/liblocationservice.so
-vendor/lib/liblowi_client.so
-vendor/lib/libquipc_os_api.so
-vendor/lib/libquipc_os_api.so
-vendor/lib/libquipc_ulp_adapter.so
-vendor/lib/libulp2.so
-vendor/lib/libalarmservice_jni.so
-
+vendor/lib/libloc_api_v02.so
+vendor/lib/libloc_ds_api.so
+vendor/lib/libwvdrm_L1.so
 
 # Sensors
 vendor/lib/hw/sensors.msm8226.so
@@ -325,7 +319,7 @@ bin/mpdecision
 vendor/firmware/libpn547_fw.so
 vendor/lib/libQSEEComAPI.so
 -bin/irsc_util
-bin/mm-pp-daemon
+#bin/mm-pp-daemon
 vendor/lib/libmm-abl-oem.so
 vendor/lib/libmm-abl.so
 -bin/ptt_socket_app
@@ -339,25 +333,25 @@ vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-dplmedia.so
 
 # IRDA
-bin/irrcServer
-lib/libirrc.so
-lib/libirrcClient.so
-lib/libirrcJni.so
-lib/liblgewg.so
--app/LGQRemote.apk
--app/QuicksetSDK.apk
--media/audio/ui/IR_normal.ogg
+#bin/irrcServer
+#lib/libirrc.so
+#lib/libirrcClient.so
+#lib/libirrcJni.so
+#lib/liblgewg.so
+#app/LGQRemote.apk
+#app/QuicksetSDK.apk
+#media/audio/ui/IR_normal.ogg
 
 # We need it?
 
--bin/port-bridge
--bin/riva_ramdump
--bin/imsdatadaemon
--bin/imsqmidaemon
--bin/bnrd
--bin/ssr_diag
--vendor/lib/hw/flp.default.so
--vendor/lib/libdisp-aba.so
--vendor/lib/libcneapiclient.so
--lib/libcnefeatureconfig.so
+#bin/port-bridge
+#bin/riva_ramdump
+#bin/imsdatadaemon
+#bin/imsqmidaemon
+#bin/bnrd
+#bin/ssr_diag
+#vendor/lib/hw/flp.default.so
+#vendor/lib/libdisp-aba.so
+#vendor/lib/libcneapiclient.so
+#lib/libcnefeatureconfig.so
 
