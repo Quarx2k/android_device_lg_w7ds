@@ -36,11 +36,10 @@
 #include "log.h"
 #include "util.h"
 
-#include "init_msm.h"
 
 #define CHUNK 2048 /* read 2048 bytes at a time */
 
-int check_cmdline(char param[]) {
+int check_cmdline(const char param[]) {
 
     char buf[CHUNK];
     FILE *file;
@@ -72,10 +71,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     char device[PROP_VALUE_MAX];
     char devicename[PROP_VALUE_MAX];
 
-    UNUSED(msm_id);
-    UNUSED(msm_ver);
-    UNUSED(board_type);
-
     property_get("ro.boot.serialno", serial);
     if (strncmp(serial, "LGD410", 6) == 0) {
         /* D410, D410hn */
@@ -89,6 +84,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         }
         property_set("ro.build.description", "w7ds_global_com-user 5.0.2 LRX22G.A1423481010 15040202274a7 release-keys");
         property_set("ro.build.fingerprint", "lge/w7ds_global_com/w7ds:5.0.2/LRX22G.A1423481010/15040202274a7:user/release-keys");
+        property_set("persist.multisim.config", "dsds");
         property_set("persist.radio.multisim.config", "dsds");
     } else if (strncmp(serial, "LGD405", 6) == 0) {
         /* D405, D405n */
@@ -103,6 +99,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "w7_global_com-user 5.0.2 LRX22G.A1423481010 15040202274a7 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_global_com/w7ds:5.0.2/LRX22G.A1423481010/15040202274a7:user/release-keys");
         property_set("persist.radio.multisim.config", "");
+        property_set("persist.multisim.config", "");
     } else if (strncmp(serial, "LGD415", 6) == 0) {
         /* D415 */
         property_set("ro.product.model", "LG-D415");
@@ -110,11 +107,13 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "w7_global_com-user 5.0.2 LRX22G.A1423481010 15040202274a7 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_global_com/w7ds:5.0.2/LRX22G.A1423481010/15040202274a7:user/release-keys");
         property_set("persist.radio.multisim.config", "");
+        property_set("persist.multisim.config", "");
     } else {
         /* XXX */
         property_set("ro.product.device", "w7");
         property_set("ro.product.model", "Please write your model name to agent00791@gmail.com");
         property_set("persist.radio.multisim.config", "");
+        property_set("persist.multisim.config", "");
     }
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));

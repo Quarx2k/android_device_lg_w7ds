@@ -25,7 +25,7 @@ TARGET_SPECIFIC_HEADER_PATH += device/lge/w7/include
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/lge/w7/init/init_w7.c
+TARGET_LIBINIT_DEFINES_FILE := device/lge/w7/init/init_w7.cpp
 TARGET_OTA_ASSERT_DEVICE := w7,w7ds,w7n
 TARGET_INCREMENTAL_OTA_VERBATIM_FILES := /system/priv-app/OneTimeInitializer/OneTimeInitializer.apk /system/app/Provision/Provision.apk
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/w7
