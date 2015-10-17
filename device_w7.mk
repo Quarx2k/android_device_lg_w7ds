@@ -140,7 +140,8 @@ PRODUCT_PACKAGES += \
     libcurl \
     tcpdump \
     Torch \
-    libxml2
+    libxml2 \
+    libsymbols-compat
 
 # Misc
 PRODUCT_PACKAGES += \

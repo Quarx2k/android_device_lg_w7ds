@@ -27,6 +27,9 @@
  
 import init.w7.usb.rc
 
+on early-init
+    export LD_PRELOAD "/system/lib/libsymbols-compat.so"
+
 on init
 
     # Support legacy paths
