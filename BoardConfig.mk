@@ -20,13 +20,7 @@
 # included in a build is to use PRODUCT_PACKAGES in a product
 # definition file).
 #
-
-USE_CAMERA_STUB := false
-TARGET_NO_BOOTLOADER := true
 TARGET_SPECIFIC_HEADER_PATH += device/lge/w7/include
-
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/w7
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
@@ -34,11 +28,14 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/lge/w7/init/init_w7.c
 TARGET_OTA_ASSERT_DEVICE := w7,w7ds,w7n
 TARGET_INCREMENTAL_OTA_VERBATIM_FILES := /system/priv-app/OneTimeInitializer/OneTimeInitializer.apk /system/app/Provision/Provision.apk
-ART_USE_HSPACE_COMPACT := true
-MALLOC_IMPL := dlmalloc
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/w7
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := w7
+TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
 
 # Platform
-TARGET_BOOTLOADER_BOARD_NAME := w7
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
@@ -49,6 +46,8 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_MEMCPY_BASE_OPT_DISABLE := true
 TARGET_CPU_VARIANT := krait
+ART_USE_HSPACE_COMPACT := true
+MALLOC_IMPL := dlmalloc
 
 # Kernel image
 BOARD_KERNEL_SEPARATED_DT := true
@@ -59,6 +58,13 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 us
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := true
+WITH_DEXPREOPT_COMP := false
+endif
 
 # Offmode Charging
 COMMON_GLOBAL_CFLAGS += \
@@ -77,13 +83,12 @@ BOARD_USES_QCOM_HARDWARE := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+
 # Audio
-BOARD_USES_ALSA_AUDIO := true
-AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
+#AUDIO_FEATURE_ENABLED_FM := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
-AUDIO_FEATURE_ENABLED_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
+BOARD_USES_ALSA_AUDIO := true
 
 # Graphics
 USE_OPENGL_RENDERER := true
@@ -132,31 +137,27 @@ TARGET_USES_WCNSS_CTRL := true
 TARGET_USES_QCOM_WCNSS_QMI := true
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
-
+WLAN_PATH = wlan-caf
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Nfc
 BOARD_NFC_CHIPSET := pn547
 
-# Storage
-BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
-BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
-BOARD_VOLD_MAX_PARTITIONS := 40
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00E00000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00E00000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 754974720
-BOARD_FLASH_BLOCK_SIZE := 131072
+# Filesystem, Fix to real sizes.
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 754974720
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 536870912
+BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
+BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true #Related to error: "source and target don't have same number of chunks!"
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
-
-# Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true

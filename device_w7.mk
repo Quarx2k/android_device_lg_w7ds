@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
@@ -147,8 +147,8 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
 # Keyhandler
-PRODUCT_PACKAGES += \
-    com.cyanogenmod.keyhandler
+#PRODUCT_PACKAGES += \
+#    com.cyanogenmod.keyhandler
 
 # Crda
 PRODUCT_PACKAGES += \
@@ -176,7 +176,6 @@ PRODUCT_PACKAGES += \
     gps.msm8226
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/gps/quipc.conf:system/etc/quipc.conf \
@@ -203,7 +202,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8226
+    gps.msm8226 \
+    gps.conf
 
 # HAL
 PRODUCT_PACKAGES += \
@@ -213,9 +213,6 @@ PRODUCT_PACKAGES += \
     lights.msm8226 \
     memtrack.msm8226 \
     power.msm8226
-
-# QRNG
-PRODUCT_PACKAGES += qrngp
 
 # Utilities
 PRODUCT_PACKAGES += \
@@ -274,6 +271,13 @@ PRODUCT_PACKAGES += \
     hostapd.deny \
     hostapd_default.conf \
     libnetcmdiface
+
+# Tcmiface
+PRODUCT_PACKAGES += \
+    tcmiface
+
+PRODUCT_BOOT_JARS += \
+    tcmiface
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -336,7 +340,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=LgeRIL
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0
 
 # NFC packages
 PRODUCT_PACKAGES += \
@@ -360,8 +366,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     cm.updater.uri=http://api.quarx.cm-for.us/api
 
 # Screen density
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 $(call inherit-product, vendor/lge/w7/w7-vendor.mk)
 
