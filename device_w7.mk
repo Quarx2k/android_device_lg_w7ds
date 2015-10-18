@@ -374,7 +374,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     cm.updater.uri=http://api.quarx.cm-for.us/api
 
 # Screen density
-PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 $(call inherit-product, vendor/lge/w7/w7-vendor.mk)
