@@ -6,7 +6,7 @@ etc/firmware/leia_pm4_470.fw
 etc/firmware/a225p5_pm4.fw
 
 # Keystore firmware
-vendir/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b00
 vendor/firmware/keymaster/keymaster.b02
 vendor/firmware/keymaster/keymaster.mdt
 vendor/firmware/keymaster/keymaster.b01
