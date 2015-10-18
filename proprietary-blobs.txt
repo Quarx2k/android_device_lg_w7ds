@@ -47,7 +47,6 @@ vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbloader.so
-#bin/fm_qsoc_patches
 
 # Listen service
 vendor/lib/liblistenhardware.so
@@ -271,8 +270,6 @@ vendor/lib/libmmcamera_imx219.so
 
 # Media
 lib/libqomx_core.so
-lib/libdashplayer.so
-vendor/lib/libmmipstreamaal.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxEvrcDec.so
@@ -300,7 +297,7 @@ vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
 vendor/lib/libloc_api_v02.so
 vendor/lib/libloc_ds_api.so
-vendor/lib/libwvdrm_L1.so
+
 
 # Sensors
 vendor/lib/hw/sensors.msm8226.so
