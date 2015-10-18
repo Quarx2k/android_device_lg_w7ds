@@ -244,19 +244,26 @@ PRODUCT_PACKAGES += \
     libqdutils \
     libtilerenderer
 
-# Omx
+# OMX
 PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libdashplayer \
     libdivxdrmdecrypt \
-    libmm-omxcore \
-    libOmxCore \
-    libstagefrighthw \
-    libOmxVdec \
-    libOmxVenc \
+    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
+    libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libdashplayer \
+    libOmxVdec \
+    libOmxVdecHevc \
+    libOmxVenc \
+    libOmxVidcCommon \
+    libqcmediaplayer \
+    libstagefrighthw \
+    qcmediaplayer
+
+PRODUCT_BOOT_JARS += \
     qcmediaplayer
 
 # Filesystem management tools

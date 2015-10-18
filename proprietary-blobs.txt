@@ -48,12 +48,6 @@ vendor/lib/libaudioalsa.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbloader.so
 
-# Listen service
-vendor/lib/liblistenhardware.so
-vendor/lib/liblistenjni.so
-vendor/lib/liblisten.so
-vendor/lib/liblistensoundmodel.so
-
 # Ril
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
@@ -93,7 +87,6 @@ bin/qmuxd
 bin/rild
 bin/rmt_storage
 bin/netmgrd
-# ????
 vendor/lib/libconfigdb.so
 vendor/lib/libdsucsd.so
 vendor/lib/libqmi_csvt_srvc.so
@@ -165,6 +158,7 @@ lib/libmmcamera_imx219.so
 lib/libmmcamera_interface.so
 lib/libmorpho_image_stab31.so
 lib/libmorpho_memory_allocator.so
+lib/libmorpho_noise_reduction.so
 lib/libmorpho_panorama_gp.so
 lib/libmorpho_panorama_wa_viewer.so
 lib/libmmjpeg_interface.so
@@ -196,14 +190,10 @@ vendor/lib/libmmcamera_imx219_eeprom.so
 vendor/lib/libmmcamera_mt9m114.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmjpeg.so
-vendor/lib/libjpegdhw.so
-vendor/lib/libjpegehw.so
-vendor/lib/libqomx_jpegdec.so
-vendor/lib/libqomx_jpegenc.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmm-hdcpmgr.so
-lib/libmm-omxcore.so
-lib/libmorpho_noise_reduction.so
+vendor/lib/libjpegdhw.so
+vendor/lib/libjpegehw.so
 vendor/lib/libHevcSwDecoder.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libactuator_dw9714.so
@@ -270,11 +260,15 @@ vendor/lib/libmmcamera_imx219.so
 
 # Media
 lib/libqomx_core.so
+lib/libOmxVdecHevc.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxMux.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
+vendor/lib/libqomx_jpegdec.so
+vendor/lib/libqomx_jpegenc.so
 
 # Adsp
 bin/adsprpcd
@@ -315,40 +309,10 @@ bin/mpdecision
 # Other
 vendor/firmware/libpn547_fw.so
 vendor/lib/libQSEEComAPI.so
--bin/irsc_util
-#bin/mm-pp-daemon
+bin/qseecomd
+bin/irsc_util
+bin/mm-pp-daemon
 vendor/lib/libmm-abl-oem.so
 vendor/lib/libmm-abl.so
--bin/ptt_socket_app
--lib/libqsap_sdk.so
-bin/ims_rtp_daemon
-vendor/lib/lib-imsdpl.so
-vendor/lib/lib-rtpsl.so
-vendor/lib/lib-rtpcore.so
-vendor/lib/lib-rtpdaemoninterface.so
-vendor/lib/lib-rtpcommon.so
-vendor/lib/lib-dplmedia.so
 
-# IRDA
-#bin/irrcServer
-#lib/libirrc.so
-#lib/libirrcClient.so
-#lib/libirrcJni.so
-#lib/liblgewg.so
-#app/LGQRemote.apk
-#app/QuicksetSDK.apk
-#media/audio/ui/IR_normal.ogg
-
-# We need it?
-
-#bin/port-bridge
-#bin/riva_ramdump
-#bin/imsdatadaemon
-#bin/imsqmidaemon
-#bin/bnrd
-#bin/ssr_diag
-#vendor/lib/hw/flp.default.so
-#vendor/lib/libdisp-aba.so
-#vendor/lib/libcneapiclient.so
-#lib/libcnefeatureconfig.so
 
