@@ -1,36 +1,42 @@
 # Time services
 bin/time_daemon
 
-# Keystore
-vendor/firmware/keymaster/keymaster.b00
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
+etc/firmware/a225p5_pm4.fw
+
+# Keystore firmware
+vendir/firmware/keymaster/keymaster.b00
 vendor/firmware/keymaster/keymaster.b02
 vendor/firmware/keymaster/keymaster.mdt
 vendor/firmware/keymaster/keymaster.b01
 vendor/firmware/keymaster/keymaster.b03
 
-# Firmwares
-vendor/firmware/leia_pfp_470.fw
-vendor/firmware/leia_pm4_470.fw
-vendor/firmware/a225p5_pm4.fw
 # Venus (media) firmware
-vendor/firmware/venus.b01
-vendor/firmware/venus.b03
-vendor/firmware/venus.mbn
-vendor/firmware/venus.b00
-vendor/firmware/venus.b02
-vendor/firmware/venus.b04
-vendor/firmware/venus.mdt
+etc/firmware/venus.b01
+etc/firmware/venus.b03
+etc/firmware/venus.mbn
+etc/firmware/venus.b00
+etc/firmware/venus.b02
+etc/firmware/venus.b04
+etc/firmware/venus.mdt
 # Graphics firmware
-vendor/firmware/a225_pm4.fw
-vendor/firmware/a300_pm4.fw
-vendor/firmware/a330_pm4.fw
-vendor/firmware/a225_pfp.fw
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a330_pfp.fw
+etc/firmware/a225_pm4.fw
+etc/firmware/a300_pm4.fw
+etc/firmware/a330_pm4.fw
+etc/firmware/a225_pfp.fw
+etc/firmware/a300_pfp.fw
+etc/firmware/a330_pfp.fw
 # Camera firmware
-vendor/firmware/cpp_firmware_v1_1_6.fw
-vendor/firmware/cpp_firmware_v1_1_1.fw
-vendor/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_2_0.fw
+# NFC Firmware
+etc/firmware/Signedrompatch_v20.bin
+etc/firmware/Signedrompatch_v21.bin
+etc/firmware/Signedrompatch_v24.bin
+etc/firmware/Signedrompatch_v30.bin
+etc/firmware/nfc_test.bin
 
 # Audio
 etc/ACDB/Bluetooth_cal.acdb
