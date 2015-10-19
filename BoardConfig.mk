@@ -163,9 +163,6 @@ EXTENDED_FONT_FOOTPRINT := true
 # Nfc
 BOARD_NFC_CHIPSET := pn547
 
-# Power
-TARGET_POWERHAL_VARIANT := qcom
-
 # SELinux policies
 # qcom sepolicy
 include device/qcom/sepolicy/sepolicy.mk
