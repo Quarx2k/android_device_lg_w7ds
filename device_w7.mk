@@ -336,6 +336,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     use.voice.path.for.pcm.voip=true
 
+# IO Scheduler
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.io.scheduler=bfq
+
 # Radio and Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
