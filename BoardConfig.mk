@@ -167,9 +167,6 @@ EXTENDED_FONT_FOOTPRINT := true
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
 
-# PowerHal
-TARGET_POWERHAL_VARIANT := qcom
-
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := device/lge/w7/rootdir/fstab.w7
@@ -195,7 +192,6 @@ RECOVERY_SDCARD_ON_DATA := true
 HAVE_SELINUX := true
 BOARD_HAS_NO_MISC_PARTITION := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-
 
 # SELinux policies
 # qcom sepolicy
