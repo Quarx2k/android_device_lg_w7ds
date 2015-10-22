@@ -277,11 +277,11 @@ PRODUCT_PACKAGES += \
     libnetcmdiface
 
 # Tcmiface
-PRODUCT_PACKAGES += \
-    tcmiface
+#PRODUCT_PACKAGES += \
+#    tcmiface
 
-PRODUCT_BOOT_JARS += \
-    tcmiface
+#PRODUCT_BOOT_JARS += \
+#    tcmiface
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
