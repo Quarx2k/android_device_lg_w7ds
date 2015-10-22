@@ -15,8 +15,8 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := libsymbols-compat.cpp
-LOCAL_SHARED_LIBRARIES := liblog libbinder
+LOCAL_SRC_FILES := libsymbols-compat.cpp bio_b64.c rsa_pss.c others.c p_seal.c p_open.c evp_enc.c p_enc.c p_dec.c
+LOCAL_SHARED_LIBRARIES := liblog libbinder liblog libcrypto
 LOCAL_MODULE := libsymbols-compat
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
