@@ -54,11 +54,6 @@ PRODUCT_COPY_FILES += \
 
 # Configs
 PRODUCT_COPY_FILES += \
-    device/lge/w7/prebuilt/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    device/lge/w7/prebuilt/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    device/lge/w7/prebuilt/etc/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
-    device/lge/w7/prebuilt/etc/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny \
-    device/lge/w7/prebuilt/etc/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
     device/lge/w7/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
     device/lge/w7/prebuilt/etc/audio_effects.conf:system/etc/audio_effects.conf \
     device/lge/w7/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
@@ -108,65 +103,46 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm8226 \
-    audio_policy.msm8226 \
+    audiod \
     audio.a2dp.default \
-    audio.usb.default \
+    audio_policy.msm8226 \
+    audio.primary.msm8226 \
     audio.r_submix.default \
-    libaudio-resampler \
-    libaudioparameter \
-    libqcomvisualizer \
+    audio.usb.default \
     libqcompostprocbundle \
+    libqcomvisualizer \
     libqcomvoiceprocessing \
-    libaudioroute \
-    libtinyalsa \
-    libtinycompress \
-    tinycap \
-    tinymix \
-    tinypcminfo \
-    tinyplay \
-    libalsa-intf \
-    libaudio-resampler \
-    libaudioutils \
-    aplay \
-    amix \
-    arec \
-    alsaucm_test
+    tinymix
 
-# Misc
+# Misc dependency packages
 PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
     curl \
+    libnl_2 \
+    libxml \
+    libtinyxml \
     libbson \
-    libcurl \
-    tcpdump \
-    Torch \
-    libxml2 \
     libsymbols-compat
 
 # Misc
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
-# Crda
-PRODUCT_PACKAGES += \
-    crda \
-    linville.key.pub.pem \
-    regdbdump \
-    regulatory.bin
-
-# Qcom SoftAP
-PRODUCT_PACKAGES += \
-    libQWiFiSoftApCfg
-
 # Wifi
 PRODUCT_PACKAGES += \
-    p2p_supplicant_overlay.conf \
-    wpa_supplicant_overlay.conf \
+    dhcpcd.conf \
     libwpa_client \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf \
-    libwcnss_qmi \
+    wpa_supplicant_overlay.conf \
+    p2p_supplicant_overlay.conf \
+    hostapd_default.conf \
+    hostapd.accept \
+    hostapd.deny \
+    wcnss_service \
+    libwcnss_qmi
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -180,15 +156,6 @@ PRODUCT_COPY_FILES += \
 
 # Charger
 PRODUCT_PACKAGES += charger charger_res_images
-
-# QRNGD
-PRODUCT_PACKAGES += qrngd
-
-# Ebtables
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    libebtc
 
 # FM radio
 PRODUCT_PACKAGES += \
@@ -218,19 +185,6 @@ PRODUCT_PACKAGES += \
     fsck.f2fs \
     fibmap.f2fs \
     wcnss_service
-
-# Opengles version 3
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196608
-
-# QCOM Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=1 \
-    debug.sf.hw=1 \
-    debug.composition.type=dyn \
-    persist.hwc.mdpcomp.enable=true \
-    debug.mdpcomp.logs=0 \
-    debug.enabletr=0
 
 # QCOM Display
 PRODUCT_PACKAGES += \
@@ -266,8 +220,8 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     make_ext4fs \
     e2fsck \
-    resize2fs \
-    setup_fs
+    setup_fs \
+    mkfs.f2fs
 
 #wifi
 PRODUCT_PACKAGES += \
@@ -275,82 +229,6 @@ PRODUCT_PACKAGES += \
     hostapd.deny \
     hostapd_default.conf \
     libnetcmdiface
-
-# Tcmiface
-#PRODUCT_PACKAGES += \
-#    tcmiface
-
-#PRODUCT_BOOT_JARS += \
-#    tcmiface
-
-# Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bt.le_dev_pwr_class=1 \
-    ro.bluetooth.hfp.ver=1.6 \
-    ro.qualcomm.bt.hci_transport=smd
-
-# WiFi
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.qc.sub.rdump.on=1 \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15
-
-# Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.24bit.enable=false \
-    audio.offload.buffer.size.kb=32 \
-    audio.offload.gapless.enabled=false \
-    audio.offload.multiple.enabled=false \
-    audio.offload.pcm.16bit.enable=true \
-    audio.offload.pcm.24bit.enable=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    av.offload.enable=false \
-    av.streaming.offload.enable=false
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    mm.enable.smoothstreaming=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.calfile0=/etc/Bluetooth_cal.acdb \
-    persist.audio.calfile1=/etc/General_cal.acdb \
-    persist.audio.calfile2=/etc/Global_cal.acdb \
-    persist.audio.calfile3=/etc/Handset_cal.acdb \
-    persist.audio.calfile4=/etc/Hdmi_cal.acdb \
-    persist.audio.calfile5=/etc/Headset_cal.acdb \
-    persist.audio.calfile6=/etc/Speaker_cal.acdb
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qc.sdk.audio.fluencetype=endfire \
-    ro.qc.sdk.audio.ssr=false
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    use.voice.path.for.pcm.voip=true
-
-# IO Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=bfq
-
-# Radio and Telephony
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.use_data_netmgrd=true \
-    ro.ril.transmitpower=true \
-    persist.radio.apm_sim_not_pwdn=1 \
-    persist.radio.call_type=1 \
-    ro.config.vc_call_vol_steps=7 \
-    ro.modem.no_wdog_chk=1 \
-    persist.call_recording.enabled=1 \
-    ro.telephony.ril_class=LgeRIL
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb \
-    ro.adb.secure=0 \
-    ro.secure=0
 
 # NFC packages
 PRODUCT_PACKAGES += \
@@ -361,9 +239,64 @@ PRODUCT_PACKAGES += \
 
 NFCEE_ACCESS_PATH := device/lge/w7/prebuilt/etc/nfcee_access.xml
 
-# QC time services
+# Tcmiface
+#PRODUCT_PACKAGES += \
+#    tcmiface
+
+#PRODUCT_BOOT_JARS += \
+#    tcmiface
+
+# IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true
+    sys.io.scheduler=bfq
+
+#ro.telephony.ril_class=LgeRIL
+# System properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.hwc.mdpcomp.enable=true \
+    persist.timed.enable=true \
+    ro.opengles.version=196608 \
+    ro.qualcomm.bt.hci_transport=smd \
+    ro.telephony.default_network=9 \
+    ro.use_data_netmgrd=true \
+    persist.data.netmgrd.qos.enable=true \
+    persist.data.tcpackprio.enable=true \
+    ro.data.large_tcp_window_size=true \
+    telephony.lteOnGsmDevice=0 \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15 \
+    ro.qualcomm.perf.cores_online=2 \
+    ro.vendor.extension_library=libqti-perfd-client.so \
+    ro.telephony.call_ring.multiple=0 
+
+# Audio properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    mm.enable.smoothstreaming=true \
+    mm.enable.qcom_parser=3310129 \
+    ro.qc.sdk.audio.fluencetype=endfire \
+    persist.audio.fluence.voicecall=true \
+    audio.offload.buffer.size.kb=32 \
+    av.offload.enable=true \
+    av.streaming.offload.enable=true \
+    use.voice.path.for.pcm.voip=true \
+    audio.offload.multiple.enabled=false \
+    audio.offload.gapless.enabled=true \
+    tunnel.audio.encode=true \
+    media.aac_51_output_enabled=true \
+    audio.offload.pcm.16bit.enable=true \
+    audio.offload.pcm.24bit.enable=true \
+    use.voice.path.for.pcm.voip=true \
+    persist.audio.calfile0=/etc/Bluetooth_cal.acdb \
+    persist.audio.calfile1=/etc/General_cal.acdb \
+    persist.audio.calfile2=/etc/Global_cal.acdb \
+    persist.audio.calfile3=/etc/Handset_cal.acdb \
+    persist.audio.calfile4=/etc/Hdmi_cal.acdb \
+    persist.audio.calfile5=/etc/Headset_cal.acdb \
+    persist.audio.calfile6=/etc/Speaker_cal.acdb
+
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb
 
 # Enable KSM by default
 PRODUCT_PROPERTY_OVERRIDES += \
