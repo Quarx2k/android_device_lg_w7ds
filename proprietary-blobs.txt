@@ -1,5 +1,8 @@
 # Time services
 bin/time_daemon
+-vendor/lib/libtime_genoff.so
+-vendor/lib/libTimeService.so
+-app/TimeService/TimeService.apk
 
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
@@ -54,6 +57,26 @@ vendor/lib/libaudioalsa.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbloader.so
 
+# Qualcomm framework
+bin/irsc_util
+vendor/lib/libdiag.so
+vendor/lib/libdsi_netctrl.so
+vendor/lib/libdsutils.so
+vendor/lib/libidl.so
+vendor/lib/libqcci_legacy.so
+vendor/lib/libqdi.so
+vendor/lib/libqdp.so
+vendor/lib/libqmi.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_client_qmux.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_csvt_srvc.so
+vendor/lib/libqmi_encdec.so
+vendor/lib/libqmiservices.so
+vendor/lib/libsmemlog.so
+vendor/lib/libsystem_health_mon.so
+
 # Radio
 -app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -app/shutdownlistener/shutdownlistener.apk
@@ -67,11 +90,10 @@ framework/qcrilhook.jar
 -vendor/lib/libmdmdetect.so
 vendor/lib/libconfigdb.so
 vendor/lib/libnetmgr.so
-vendor/lib/libperipheral_client.so
+-vendor/lib/libperipheral_client.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libxml.so
-vendor/lib/libCommandSvc.so
 
 # Graphics
 vendor/lib/egl/eglsubAndroid.so
@@ -95,11 +117,21 @@ vendor/lib/librs_adreno_sha1.so
 vendor/lib/libscale.so
 vendor/lib/libc2d30.so
 
-# Media
-vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/libWVphoneAPI.so
+# DRM
+bin/qseecomd
+lib/libdrmdecrypt.so
+vendor/lib/libQSEEComAPI.so
+vendor/lib/libdrmdiag.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/librpmb.so
+vendor/lib/libssd.so
 vendor/lib/libwvm.so
+vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/libWVphoneAPI.so
+vendor/lib/drm/libdrmwvmplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+
 
 # Bluetooth
 bin/bdaddr_loader
@@ -173,10 +205,8 @@ vendor/lib/libmmcamera_mt9m114.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
-vendor/lib/libmm-hdcpmgr.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
-vendor/lib/libHevcSwDecoder.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libactuator_dw9714.so
 vendor/lib/libactuator_dw9714_camcorder.so
@@ -238,19 +268,24 @@ vendor/lib/libmmcamera_hi707.so
 vendor/lib/libmmcamera_imx111.so
 vendor/lib/libmmcamera_imx119.so
 vendor/lib/libmmcamera_imx219.so
-
+vendor/lib/libqomx_jpegdec.so
+vendor/lib/libqomx_jpegenc.so
+lib/libqomx_core.so
 
 # Media
-lib/libqomx_core.so
-lib/libOmxVdecHevc.so
+vendor/lib/libHevcSwDecoder.so
+vendor/lib/libI420colorconvert.so
+vendor/lib/libmmosal.so
+vendor/lib/libmmparser.so
+vendor/lib/libmm-color-convertor.so
+vendor/lib/libDivxDrm.so
+vendor/lib/libExtendedExtractor.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxMux.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
-vendor/lib/libqomx_jpegdec.so
-vendor/lib/libqomx_jpegenc.so
+vendor/lib/libSHIMDivxDrm.so
 
 # Adsp
 bin/adsprpcd
@@ -286,12 +321,8 @@ vendor/lib/libsensor_user_cal.so
 
 # Perf
 bin/mpdecision
+vendor/lib/libqti-perfd-client.so
 
-# Other
+# Nfc
 vendor/firmware/libpn547_fw.so
-vendor/lib/libQSEEComAPI.so
-bin/qseecomd
-vendor/lib/libmm-abl-oem.so
-vendor/lib/libmm-abl.so
-
 

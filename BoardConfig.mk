@@ -119,9 +119,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # Hardware tunables framework
 BOARD_HARDWARE_CLASS := device/lge/w7/cmhw/
 
-# RIL
-BOARD_RIL_CLASS := ../../../device/lge/w7/ril/
-
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true

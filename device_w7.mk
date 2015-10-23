@@ -64,8 +64,6 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/prebuilt/usr/keylayout/Generic-D4x5.kl:system/usr/keylayout/Generic-D4x5.kl \
     device/lge/w7/prebuilt/usr/keylayout/Generic-D410.kl:system/usr/keylayout/Generic-D410.kl \
     device/lge/w7/prebuilt/etc/init.zetaw.bt.sh:system/etc/init.zetaw.bt.sh \
-    device/lge/w7/prebuilt/etc/msap.conf:system/etc/msap.conf \
-    device/lge/w7/prebuilt/etc/clatd.conf:system/etc/clatd.conf \
     device/lge/w7/prebuilt/etc/sec_config:system/etc/sec_config \
     device/lge/w7/prebuilt/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/lge/w7/prebuilt/etc/nfc-nci.conf:system/etc/nfc-nci.conf \
@@ -78,6 +76,7 @@ PRODUCT_COPY_FILES += \
     device/lge/w7/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
     device/lge/w7/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv_boot.bin \
     device/lge/w7/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/lge/w7/rootdir/fstab.w7:root/fstab.w7 \
@@ -251,7 +250,6 @@ NFCEE_ACCESS_PATH := device/lge/w7/prebuilt/etc/nfcee_access.xml
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=bfq
 
-#ro.telephony.ril_class=LgeRIL
 # System properties
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
