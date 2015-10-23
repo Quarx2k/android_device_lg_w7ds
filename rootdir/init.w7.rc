@@ -39,9 +39,6 @@ on init
     # NFC fix
     symlink /dev/pn547 /dev/pn544
 
-    # We use our own ril-daemon service definition, see mmi-ril-daemon
-    stop ril-daemon
-
 on post-fs
     chmod 664 /sys/devices/virtual/input/lge_touch/touch_gesture
     chown system system /sys/devices/virtual/input/lge_touch/touch_gesture
@@ -462,18 +459,27 @@ on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
-on property:persist.radio.multisim.config=dsds
-    stop ril-daemon
-    start mmi-ril-daemon
-    start ril-daemon2
+service_redefine ril-daemon /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+    socket cutback stream 660 media radio
+    user root
+    group radio cache inet misc audio sdcard_rw qcom_oncrpc qcom_diag log net_raw diag
 
-service ril-daemon2 /system/bin/rild -c 2
+service ril-daemon1 /system/bin/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
     user root
+    group radio cache inet misc audio sdcard_rw qcom_oncrpc qcom_diag log net_raw diag
     disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log net_raw
+
+service rild1-wrapper /system/bin/sh /system/etc/init.qcom.ril.sh
+    class late_start
+    user root
+    group root
+    oneshot
 
 on property:ro.bootmode=chargerlogo
     class_reset main
@@ -538,19 +544,10 @@ service wcnss-service /system/bin/wcnss_service
    group system wifi
    oneshot
 
-service mmi-ril-daemon /system/bin/rild
-    class main
-    socket rild stream 660 root radio
-    socket rild-debug stream 660 radio system
-    socket cutback stream 660 media radio
-    user root
-    group radio cache inet misc audio sdcard_rw qcom_oncrpc qcom_diag log net_raw diag
-
 service config_bluetooth /system/bin/sh /system/etc/init.zetaw.bt.sh "onboot"
     class core
     user root
     oneshot
-
 
 # Charger
 on charger
