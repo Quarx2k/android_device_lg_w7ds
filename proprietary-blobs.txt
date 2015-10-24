@@ -42,14 +42,14 @@ etc/firmware/Signedrompatch_v30.bin
 etc/firmware/nfc_test.bin
 
 # Audio
-etc/ACDB/Bluetooth_cal.acdb
-etc/ACDB/General_cal.acdb
-etc/ACDB/Global_cal.acdb
-etc/ACDB/Handset_cal.acdb
-etc/ACDB/Hdmi_cal.acdb
-etc/ACDB/Headset_cal.acdb
-etc/ACDB/Speaker_cal.acdb
-etc/ACDB/workspaceFile.qwsp
+etc/acdbdata/Bluetooth_cal.acdb
+etc/acdbdata/General_cal.acdb
+etc/acdbdata/Global_cal.acdb
+etc/acdbdata/Handset_cal.acdb
+etc/acdbdata/Hdmi_cal.acdb
+etc/acdbdata/Headset_cal.acdb
+etc/acdbdata/Speaker_cal.acdb
+etc/acdbdata/workspaceFile.qwsp
 vendor/lib/libadiertac.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libaudcal.so
