@@ -66,14 +66,14 @@ vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
-vendor/lib/libqmi.so
+-vendor/lib/libqmi.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_csvt_srvc.so
 vendor/lib/libqmi_encdec.so
-vendor/lib/libqmiservices.so
+-vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
 
@@ -138,7 +138,7 @@ bin/bdaddr_loader
 bin/btnvtool
 bin/hci_qcomm_init
 lib/libatd_corelib.so
-lib/libbtnv.so
+-lib/libbtnv.so
 lib/liblgftmitem.so
 
 # Camera
