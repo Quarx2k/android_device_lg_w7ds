@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \\
     libqcci_legacy \\
     libqmi_client_qmux \\
     libqmi_csi \\
+    libqmi_cci \\
     libqmi_common_so \\
     libdsi_netctrl
 
