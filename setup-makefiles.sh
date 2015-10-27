@@ -63,7 +63,8 @@ DEVICE_PACKAGE_OVERLAYS := vendor/$VENDOR/$DEVICE/overlay
 # Apps
 PRODUCT_PACKAGES += \\
     qcrilmsgtunnel \\
-    shutdownlistener
+    shutdownlistener \\
+    com.qualcomm.location
 
 PRODUCT_PACKAGES += \\
     libtime_genoff \\
@@ -76,7 +77,12 @@ PRODUCT_PACKAGES += \\
     libperipheral_client \\
     libbtnv \\
     libqmiservices \\
-    libqmi
+    libqmi \\
+    libqcci_legacy \\
+    libqmi_client_qmux \\
+    libqmi_csi \\
+    libqmi_common_so \\
+    libdsi_netctrl
 
 #com.qualcomm.services.location
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
@@ -122,6 +128,17 @@ EOF
 ifneq (\$(filter w7,\$(TARGET_DEVICE)),)
 
 LOCAL_PATH := \$(call my-dir)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := com.qualcomm.location
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/priv-app/com.qualcomm.location/com.qualcomm.location.apk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_MODULE_CLASS := APPS
+LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
+include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := shutdownlistener
@@ -221,6 +238,72 @@ include \$(CLEAR_VARS)
 LOCAL_MODULE := libqmi
 LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := proprietary/vendor/lib/libqmi.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := \$(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_PROPRIETARY_MODULE := true
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libqmi_cci
+LOCAL_MODULE_OWNER := lge
+LOCAL_SRC_FILES := proprietary/vendor/lib/libqmi_cci.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := \$(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_PROPRIETARY_MODULE := true
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libqcci_legacy
+LOCAL_MODULE_OWNER := lge
+LOCAL_SRC_FILES := proprietary/vendor/lib/libqcci_legacy.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := \$(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_PROPRIETARY_MODULE := true
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libqmi_client_qmux
+LOCAL_MODULE_OWNER := lge
+LOCAL_SRC_FILES := proprietary/vendor/lib/libqmi_client_qmux.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := \$(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_PROPRIETARY_MODULE := true
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libqmi_csi
+LOCAL_MODULE_OWNER := lge
+LOCAL_SRC_FILES := proprietary/vendor/lib/libqmi_csi.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := \$(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_PROPRIETARY_MODULE := true
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libqmi_common_so
+LOCAL_MODULE_OWNER := lge
+LOCAL_SRC_FILES := proprietary/vendor/lib/libqmi_common_so.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH := \$(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_PROPRIETARY_MODULE := true
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libdsi_netctrl
+LOCAL_MODULE_OWNER := lge
+LOCAL_SRC_FILES := proprietary/vendor/lib/libdsi_netctrl.so
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES

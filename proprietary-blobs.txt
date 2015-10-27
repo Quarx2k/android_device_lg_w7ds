@@ -60,17 +60,17 @@ vendor/lib/libacdbloader.so
 # Qualcomm framework
 bin/irsc_util
 vendor/lib/libdiag.so
-vendor/lib/libdsi_netctrl.so
+-vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
-vendor/lib/libqcci_legacy.so
+-vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
 -vendor/lib/libqmi.so
-vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_client_qmux.so
-vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_csi.so
+-vendor/lib/libqmi_cci.so
+-vendor/lib/libqmi_client_qmux.so
+-vendor/lib/libqmi_common_so.so
+-vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_csvt_srvc.so
 vendor/lib/libqmi_encdec.so
 -vendor/lib/libqmiservices.so
@@ -303,11 +303,37 @@ vendor/lib/libthermalioctl.so
 vendor/lib/libthermalclient.so
 
 # GPS
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
+bin/loc_launcher
+bin/location-mq
+bin/lowi-server
+bin/quipc_igsn
+bin/quipc_main
+bin/xtwifi-client
+bin/xtwifi-inet-agent
+etc/permissions/com.qualcomm.location.xml
+lib/libloc_api_v02.so
+lib/libloc_ds_api.so
+vendor/bin/slim_ap_daemon
+vendor/lib/hw/activity_recognition.msm8974.so
+vendor/lib/hw/flp.default.so
+vendor/lib/libalarmservice_jni.so
+vendor/lib/libasn1crt.so
+vendor/lib/libasn1crtx.so
+vendor/lib/libasn1cper.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/liblbs_core.so
-vendor/lib/libloc_api_v02.so
-vendor/lib/libloc_ds_api.so
+vendor/lib/liblocationservice.so
+vendor/lib/liblowi_client.so
+vendor/lib/libquipc_os_api.so
+vendor/lib/libxtadapter.so
+vendor/lib/libquipc_os_api.so
+vendor/lib/libquipc_ulp_adapter.so
+vendor/lib/libwifiscanner.so
+vendor/lib/libxtwifi_ulp_adaptor.so
+vendor/lib/libxtwifi_zpp_adaptor.so
+vendor/lib/libulp2.so
 
 # Sensors
 vendor/lib/hw/sensors.msm8226.so
