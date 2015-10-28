@@ -86,18 +86,8 @@ vendor/lib/libcneapiclient.so
 vendor/lib/libperipheral_client.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib/libxml.so
-lib/libuicc.so
 lib/libmdmdetect.so
-lib/libcnefeatureconfig.so
-lib/libvss_common_iface.so
-lib/libvss_common_idl.so
-lib/libvss_nv_iface.so
-lib/libvss_nv_idl.so
-lib/libvss_common_core.so
-lib/libvss_nv_core.so
-lib/libril.so
 bin/qmuxd
-bin/rild
 bin/rmt_storage
 bin/netmgrd
 # ????

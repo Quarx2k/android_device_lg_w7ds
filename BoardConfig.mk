@@ -92,7 +92,10 @@ USE_OPENGL_RENDERER := true
 BOARD_HARDWARE_CLASS := device/lge/w7/cmhw/
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/lge/w7/ril/
+TARGET_RIL_VARIANT := caf
+#QC_PROP_ROOT := vendor/qcom/proprietary
+PROTOBUF_SUPPORTED := true
+TARGET_NO_RPC := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/w7/bluetooth
