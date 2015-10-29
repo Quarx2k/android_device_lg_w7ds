@@ -129,6 +129,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8226
+
 # Wifi
 PRODUCT_PACKAGES += \
     dhcpcd.conf \

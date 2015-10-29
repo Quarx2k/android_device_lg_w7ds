@@ -196,6 +196,9 @@ HAVE_SELINUX := true
 BOARD_HAS_NO_MISC_PARTITION := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
+# Use HW crypto for ODE
+TARGET_HW_DISK_ENCRYPTION := true
+
 # SELinux policies
 # qcom sepolicy
 include device/qcom/sepolicy/sepolicy.mk
