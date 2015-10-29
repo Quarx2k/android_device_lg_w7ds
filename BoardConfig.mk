@@ -60,12 +60,12 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
 # Enable dex-preoptimization to speed up first boot sequence
-ifeq ($(HOST_OS),linux)
-WITH_DEXPREOPT := true
-WITH_DEXPREOPT_COMP := true
-WITH_DEXPREOPT_BOOT_IMG_ONLY := true
-DONT_DEXPREOPT_PREBUILTS := true
-endif
+#ifeq ($(HOST_OS),linux)
+#WITH_DEXPREOPT := true
+#WITH_DEXPREOPT_COMP := true
+#WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+#DONT_DEXPREOPT_PREBUILTS := true
+#endif
 
 # Offmode Charging
 COMMON_GLOBAL_CFLAGS += \
