@@ -123,7 +123,7 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libtinyxml \
     libbson \
-    libsymbols-compat
+    libboringssl-compat
 
 # Misc
 PRODUCT_PACKAGES += \

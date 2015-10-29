@@ -28,7 +28,7 @@
 import init.w7.usb.rc
 
 on early-init
-    export LD_PRELOAD "/system/lib/libsymbols-compat.so"
+    export LD_PRELOAD "/system/lib/libboringssl-compat.so"
 
 on init
 

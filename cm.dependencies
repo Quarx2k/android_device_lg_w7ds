@@ -10,5 +10,9 @@
   {
     "repository": "android_kernel_lge_msm8226",
     "target_path": "kernel/lge/msm8226"
+  },
+  {
+    "repository": "android_external_sony_boringssl-compat",
+    "target_path": "external/sony/boringssl-compat"
   }
 ]
