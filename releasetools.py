@@ -22,7 +22,6 @@ def InstallEnd_SetSpecificDeviceConfigs(self):
   self.script.AppendExtra('set_metadata("/tmp/fixup.sh", "uid", 0, "gid", 0, "mode", 0755);')
   self.script.Mount("/system")
   self.script.AppendExtra('run_program("/tmp/fixup.sh");')
-  self.script.Unmount("/system")
 
 def FullOTA_InstallEnd(self):
   InstallEnd_SetSpecificDeviceConfigs(self)
