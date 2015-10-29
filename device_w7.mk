@@ -218,16 +218,14 @@ PRODUCT_PACKAGES += \
     memtrack.msm8226 \
     power.msm8226
 
-# QRNG
-PRODUCT_PACKAGES += qrngp
-
 # Utilities
 PRODUCT_PACKAGES += \
     charge_only_mode \
     mkfs.f2fs \
     fsck.f2fs \
     fibmap.f2fs \
-    wcnss_service
+    wcnss_service \
+    librmnetctl
 
 # Opengles version 3
 PRODUCT_PROPERTY_OVERRIDES += \
