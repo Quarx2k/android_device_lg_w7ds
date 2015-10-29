@@ -163,6 +163,9 @@ USE_MINIKIN := true
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# Use HW crypto for ODE
+TARGET_HW_DISK_ENCRYPTION := true
+
 # Nfc
 BOARD_NFC_CHIPSET := pn547
 
