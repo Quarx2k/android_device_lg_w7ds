@@ -248,12 +248,10 @@ PRODUCT_PACKAGES += \
 
 NFCEE_ACCESS_PATH := device/lge/w7/prebuilt/etc/nfcee_access.xml
 
-# Tcmiface
-#PRODUCT_PACKAGES += \
-#    tcmiface
-
-#PRODUCT_BOOT_JARS += \
-#    tcmiface
+# Sony timekeep
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
 
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
