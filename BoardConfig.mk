@@ -30,6 +30,9 @@ TARGET_OTA_ASSERT_DEVICE := w7,w7ds,w7n
 TARGET_INCREMENTAL_OTA_VERBATIM_FILES := /system/priv-app/OneTimeInitializer/OneTimeInitializer.apk /system/app/Provision/Provision.apk
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/w7
 
+# Keymaster
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := w7
 TARGET_NO_BOOTLOADER := true
@@ -48,6 +51,7 @@ TARGET_CPU_MEMCPY_BASE_OPT_DISABLE := true
 TARGET_CPU_VARIANT := krait
 ART_USE_HSPACE_COMPACT := true
 MALLOC_IMPL := dlmalloc
+USE_CLANG_PLATFORM_BUILD := true
 
 # Kernel image
 BOARD_KERNEL_SEPARATED_DT := true
@@ -120,8 +124,8 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 BOARD_HARDWARE_CLASS := device/lge/w7/cmhw/
 
 # GPS
-TARGET_GPS_HAL_PATH := $(PLATFORM_PATH)/gps
-TARGET_PROVIDES_GPS_LOC_API := true
+USE_DEVICE_SPECIFIC_LOC_API := true
+USE_DEVICE_SPECIFIC_GPS := true
 TARGET_NO_RPC := true
 
 # Bluetooth

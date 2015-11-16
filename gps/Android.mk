@@ -14,10 +14,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter w7,$(TARGET_DEVICE)),)
-
 LOC_PATH := $(call my-dir)
 
 include $(call first-makefiles-under,$(LOC_PATH))
 
-endif

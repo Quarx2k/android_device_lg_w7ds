@@ -81,6 +81,9 @@ on boot
     chmod 2770 /dev/socket/qmux_bluetooth
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
+ 
+    #Create NETMGR daemon socket area
+    mkdir /dev/socket/netmgr 0750 radio radio
 
     # Subsytem Restart
     #adsp
@@ -307,9 +310,6 @@ on post-fs-data
     #Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
 
-    # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
-
     mkdir /data/audio/ 0770 media audio
     # Enable the setgid bit on the directory
     chmod 2770 /data/audio
@@ -499,12 +499,12 @@ service bdaddr_loader /system/bin/bdaddr_loader
     disabled
     oneshot
 
-service irrcServer /system/bin/irrcServer
-   class main
-   user media
-   group media
-   onrestart restart irrcServer
-   disabled
+#service irrcServer /system/bin/irrcServer
+#   class main
+#   user media
+#   group media
+#   onrestart restart irrcServer
+#   disabled
 
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
@@ -516,20 +516,26 @@ on property:init.svc.media=restarting
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
 
-service time_daemon /system/bin/time_daemon
-   class late_start
-   user root
-   group root
+service timekeep /system/bin/timekeep restore
+    class late_start
+    user root
+    group root
+    oneshot
+    seclabel u:r:timekeep:s0
 
 service mpdecision /system/bin/mpdecision --avg_comp
    class main
    user root
    group system
 
-service thermal-engine /system/bin/thermal-engine
+
+service thermal-engine /system/vendor/bin/thermal-engine
    class main
    user root
    group root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
 
 service charger /sbin/healthd -c
     class charger

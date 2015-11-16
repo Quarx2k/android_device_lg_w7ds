@@ -100,6 +100,11 @@ PRODUCT_PACKAGES += \
     charger_res_w7 \
     charger_w7
 
+# Data
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    rmnetcli
+
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
