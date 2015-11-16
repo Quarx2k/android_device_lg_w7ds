@@ -320,9 +320,6 @@ on post-fs-data
     #Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
 
-    # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
-
     mkdir /data/audio/ 0770 media audio
     # Enable the setgid bit on the directory
     chmod 2770 /data/audio
@@ -526,10 +523,12 @@ on property:init.svc.media=restarting
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
 
-service time_daemon /system/bin/time_daemon
-   class late_start
-   user root
-   group root
+service timekeep /system/bin/timekeep restore
+    class late_start
+    user root
+    group root
+    oneshot
+    seclabel u:r:timekeep:s0
 
 service mpdecision /system/bin/mpdecision --avg_comp
    class main

@@ -16,3 +16,4 @@
 /sys/devices/platform/tspdrv/nforce_timed		u:object_r:vibe_dev:s0
 
 /sns(/.*)?			u:object_r:sensors_persist_file:s0
+/system/bin/timekeep                            u:object_r:timekeep_exec:s0

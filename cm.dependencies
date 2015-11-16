@@ -10,5 +10,9 @@
   {
     "repository": "android_kernel_lge_msm8226",
     "target_path": "kernel/lge/msm8226"
+  },
+  {
+    "repository": "android_hardware_sony_timekeep",
+    "target_path": "hardware/sony/timekeep"
   }
 ]
