@@ -277,6 +277,11 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf \
     libnetcmdiface
 
+# Sony timekeep
+PRODUCT_PACKAGES += \
+    timekeep \
+    TimeKeep
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bt.le_dev_pwr_class=1 \
