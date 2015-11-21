@@ -1,3 +1,6 @@
+# Time services
+bin/time_daemon
+
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
 etc/firmware/a225p5_pm4.fw
@@ -338,4 +341,17 @@ lib/liblgewg.so
 -app/LGQRemote.apk
 -app/QuicksetSDK.apk
 -media/audio/ui/IR_normal.ogg
+
+# We need it?
+
+-bin/port-bridge
+-bin/riva_ramdump
+-bin/imsdatadaemon
+-bin/imsqmidaemon
+-bin/bnrd
+-bin/ssr_diag
+-vendor/lib/hw/flp.default.so
+-vendor/lib/libdisp-aba.so
+-vendor/lib/libcneapiclient.so
+-lib/libcnefeatureconfig.so
 
