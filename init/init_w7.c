@@ -103,6 +103,7 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "w7_global_com-user 5.0.2 LRX22G.A1423481010 15040202274a7 release-keys");
         property_set("ro.build.fingerprint", "lge/w7_global_com/w7ds:5.0.2/LRX22G.A1423481010/15040202274a7:user/release-keys");
         property_set("persist.radio.multisim.config", "");
+        property_set("persist.radio.dont_use_dsd", "true");
     } else if (strncmp(serial, "LGD415", 6) == 0) {
         /* D415 */
         property_set("ro.product.model", "LG-D415");
