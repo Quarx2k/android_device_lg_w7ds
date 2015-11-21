@@ -80,7 +80,7 @@ COMMON_GLOBAL_CFLAGS += \
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/lge/w7/charger/images
 
 # Global flags
-COMMON_GLOBAL_CFLAGS += -DLG_CAMERA_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DLG_CAMERA_HARDWARE -DCAMERA_VENDOR_L_COMPAT
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -92,14 +92,12 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/dt2w_enable"  #
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
-
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
-#AUDIO_FEATURE_ENABLED_FM := true
-TARGET_QCOM_NO_FM_FIRMWARE := true
+TARGET_FM_LEGACY_PATCHLOADER := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # Graphics
@@ -207,6 +205,5 @@ TARGET_HW_DISK_ENCRYPTION := true
 # qcom sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += \
-        device/lge/w7/sepolicy
+BOARD_SEPOLICY_DIRS += device/lge/w7/sepolicy
 

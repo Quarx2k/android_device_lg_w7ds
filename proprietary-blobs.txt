@@ -298,9 +298,18 @@ vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 
 # Thermal daemon
-bin/thermal-engine
+vendor/bin/thermal-engine
 vendor/lib/libthermalioctl.so
 vendor/lib/libthermalclient.so
+
+# Listen service
+vendor/lib/liblistenhardware.so
+vendor/lib/liblistenjni.so
+-vendor/lib/liblisten.so
+vendor/lib/liblistensoundmodel.so
+
+# FM radio
+bin/fm_qsoc_patches
 
 # GPS
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
