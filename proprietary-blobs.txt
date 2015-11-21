@@ -1,5 +1,8 @@
 # Time services
+bin/time_daemon
 -vendor/lib/libtime_genoff.so
+-vendor/lib/libTimeService.so
+-app/TimeService/TimeService.apk
 
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
