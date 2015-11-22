@@ -76,6 +76,7 @@ vendor/lib/libqmi_encdec.so
 -vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
+vendor/lib/libqmi_csvt_srvc.so
 
 # Radio
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
