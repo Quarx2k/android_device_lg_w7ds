@@ -1,0 +1,6 @@
+allow qti_init_shell baseband_prop:property_service set;
+allow qti_init_shell misc_partition:blk_file { read getattr open };
+allow qti_init_shell unlabeled:file getattr;
+allow qti_init_shell vfat:file { read open };
+allow qti_init_shell unlabeled:dir search;
+allow qti_init_shell vfat:dir search;

@@ -1,7 +1,1 @@
 gsm.version.baseband		u:object_r:baseband_prop:s0
-camera.4k2k.enable		u:object_r:camera_prop:s0
-persist.data.sensor_name	u:object_r:camera_prop:s0
-persist.data.rear.minfps	u:object_r:camera_prop:s0
-persist.data.front.minfps	u:object_r:camera_prop:s0
-# Sony timekeep
-persist.sys.timeadjust		u:object_r:timekeep_prop:s0

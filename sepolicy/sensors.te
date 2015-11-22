@@ -2,15 +2,9 @@ allow sensors qmuxd:unix_stream_socket connectto;
 allow sensors qmuxd_socket:dir { write add_name search };
 allow sensors qmuxd_socket:sock_file { create setattr write };
 allow sensors self:capability sys_nice;
-allow sensors unlabeled:dir search;
-allow sensors unlabeled:dir { read getattr open };
+allow sensors unlabeled:dir { search read getattr open };
 allow sensors unlabeled:file { read write getattr open };
-allow sensors apk_data_file:dir write;
-allow sensors apk_data_file:dir add_name;
-allow sensors apk_data_file:dir remove_name;
-allow sensors apk_data_file:sock_file setattr;
-allow sensors apk_data_file:sock_file unlink;
-allow sensors apk_data_file:sock_file write;
-allow sensors apk_data_file:sock_file create;
+allow sensors apk_data_file:dir { write add_name remove_name };
+allow sensors apk_data_file:sock_file { setattr unlink write create };
 
 

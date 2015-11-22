@@ -11,8 +11,7 @@
 
 /sys/devices/platform/kcal_ctrl.0(/.*)?			u:object_r:kcal_dev:s0
 /sys/bus/platform/drivers/kcal_ctrl(/.*)?		u:object_r:kcal_dev:s0
-/sys/devices/virtual/input/lge_touch/lpwg_notify	u:object_r:lge_touch_sysfs:s0
+/sys/devices/virtual/input/lge_touch/d2tw_enable	u:object_r:lge_touch_sysfs:s0
 /sys/devices/platform/tspdrv/nforce_timed		u:object_r:vibe_dev:s0
 
 /sns(/.*)?			u:object_r:sensors_persist_file:s0
-/system/bin/timekeep                            u:object_r:timekeep_exec:s0

@@ -1,7 +1,6 @@
-# Adding allow rule for search on /fuse
-allow init fuse:dir search;
+allow init fuse:dir { mounton search };
 allow init self:capability sys_module;
-allow init fuse:dir mounton;
 allow init self:process execmem;
 allow init labeledfs:filesystem remount;
-
+allow init lge_touch_sysfs:file { relabelto setattr };
+allow init socket_device:sock_file { create setattr };
